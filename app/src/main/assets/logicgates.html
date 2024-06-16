@@ -1,0 +1,242 @@
+<h1>Logic Gates</h1>
+<p>A logic gate is a device that acts as a building block for digital&nbsp;circuits. They perform basic logical functions that are fundamental to digital circuits. Most electronic devices we use today will have some form of logic gates in them. For example, logic gates can be used in technologies such as smartphones, tablets or within memory devices.</p>
+<p>In a circuit, logic gates will make decisions based on a combination of digital signals coming from its inputs. Most logic gates have two inputs and one output. Logic gates are based on&nbsp;Boolean&nbsp;algebra. At any given moment, every terminal is in one of the two binary&nbsp;conditions,&nbsp;<em>false</em>&nbsp;or&nbsp;<em>true</em>. False represents 0, and true represents 1. Depending on the type of logic gate being used and the combination of inputs, the binary output will differ. A logic gate can be thought of like a light switch, wherein one position the output is off -- 0, and in another, it is on -- 1. Logic gates are commonly used in integrated circuits (IC).</p>
+<h3 class="section-title">Basic logic gates</h3>
+<p>There are seven basic logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR.</p>
+<p>The&nbsp;<em>AND gate</em>&nbsp;is so named because, if 0 is called "false" and 1 is called "true," the gate acts in the same way as the logical "and" operator. The following illustration and table show the circuit symbol and logic combinations for an AND gate. (In the symbol, the input terminals are at left and the output terminal is at right.) The output is "true" when both inputs are "true." Otherwise, the output is "false." In other words, the output is 1 only when both inputs one AND two are 1.</p>
+<p align="center">&nbsp;</p>
+<p align="center"><strong>AND gate</strong></p>
+<center>
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="center"><strong>Input 1</strong></td>
+<td align="center" valign="center"><strong>Input 2</strong></td>
+<td align="center" valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>The&nbsp;<em>OR gate</em>&nbsp;gets its name from the fact that it behaves after the fashion of the logical inclusive "or." The output is "true" if either or both of the inputs are "true." If both inputs are "false," then the output is "false." In other words, for the output to be 1, at least input one OR two must be 1.</p>
+<p align="center">&nbsp;</p>
+<p align="center"><strong>OR gate</strong></p>
+<center><br />
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td valign="center"><strong>Input 1</strong></td>
+<td valign="center"><strong>Input 2</strong></td>
+<td valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td valign="center">&nbsp;</td>
+<td valign="center">&nbsp;</td>
+<td valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td valign="center">&nbsp;</td>
+<td valign="center">1</td>
+<td valign="center">1</td>
+</tr>
+<tr>
+<td valign="center">1</td>
+<td valign="center">&nbsp;</td>
+<td valign="center">1</td>
+</tr>
+<tr>
+<td valign="center">1</td>
+<td valign="center">1</td>
+<td valign="center">1</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p><a id="xor" name="xor"></a>&nbsp;</p>
+<p>The&nbsp;<em>XOR</em>&nbsp;(&nbsp;<em>exclusive-OR</em>&nbsp;)&nbsp;<em>gate</em>&nbsp;acts in the same way as the logical "either/or." The output is "true" if either, but not both, of the inputs are "true." The output is "false" if both inputs are "false" or if both inputs are "true." Another way of looking at this circuit is to observe that the output is 1 if the inputs are different, but 0 if the inputs are the same.&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><strong>XOR gate</strong></p>
+<center>
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="center"><strong>Input 1</strong></td>
+<td align="center" valign="center"><strong>Input 2</strong></td>
+<td align="center" valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>&nbsp;</p>
+<p>A logical&nbsp;<em>inverter</em>, sometimes called a&nbsp;<em>NOT gate</em>&nbsp;to differentiate it from other types of electronic inverter devices, has only one input. It reverses the logic state. If the input is 1, then the output is 0. If the input is 0, then the output is 1. &nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p>&nbsp;</p>
+<center><strong>Inverter or NOT gate</strong></center><center></center><center>
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="center"><strong>Input</strong></td>
+<td align="center" valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>The&nbsp;<em>NAND gate</em>&nbsp;operates as an AND gate followed by a NOT gate. It acts in the manner of the logical operation "and" followed by negation. The output is "false" if both inputs are "true." Otherwise, the output is "true."</p>
+<p align="center">&nbsp;</p>
+<p align="center"><strong>NAND gate</strong></p>
+<center>
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="center"><strong>Input 1</strong></td>
+<td align="center" valign="center"><strong>Input 2</strong></td>
+<td align="center" valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>&nbsp;</p>
+<p>The&nbsp;<em>NOR gate</em>&nbsp;is a combination OR gate followed by an inverter. Its output is "true" if both inputs are "false." Otherwise, the output is "false."</p>
+<p align="center"><strong>NOR gate</strong></p>
+<center>
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="center"><strong>Input 1</strong></td>
+<td align="center" valign="center"><strong>Input 2</strong></td>
+<td align="center" valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>&nbsp;</p>
+<p>The&nbsp;<em>XNOR (exclusive-NOR) gate</em>&nbsp;is a combination XOR gate followed by an inverter. Its output is "true" if the inputs are the same, and "false" if the inputs are different.</p>
+<p align="center">&nbsp;</p>
+<p align="center"><strong>XNOR gate</strong></p>
+<div align="center"><center>
+<table border="2" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="center"><strong>Input 1</strong></td>
+<td align="center" valign="center"><strong>Input 2</strong></td>
+<td align="center" valign="center"><strong>Output</strong></td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+</tr>
+<tr>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">&nbsp;</td>
+<td align="center" valign="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+<td align="center" valign="center">1</td>
+</tr>
+</tbody>
+</table>
+</center></div>
+<p>Complex operations can be performed using combinations of these logic gates. In theory, there is no limit to the number of gates that can be arrayed together in a single device. But in practice, there is a limit to the number of gates that can be packed into a given physical space. Arrays of logic gates are found in digital ICs. As IC technology advances, the required physical volume for each individual logic gate decreases and digital devices of the same or smaller size become capable of performing ever-more-complicated operations at ever-increasing speeds.</p>
+<h3>Composition of logic gates</h3>
+<p>High or low binary conditions are represented by different&nbsp;voltage&nbsp;levels. The logic state of a terminal can, and generally does, often change as the circuit processes data. In most logic gates, the low state is approximately zero&nbsp;volts&nbsp;(0 V), while the high state is approximately five volts positive (+5 V).</p>
+<p>Logic gates can be made of resistors&nbsp;and transistors or diodes. A resistor can commonly be used as a pull-up or pull-down resistor. Pull-up and pull-down resistors are used when there are any unused logic gate inputs to connect to a logic level 1 or 0. This prevents any false switching of the gate. Pull-up resistors are connected to Vcc (+5V), and pull-down resistors are connected to ground (0 V).</p>
+<p>Commonly used logic gates are TTL and CMOS. TTL, or Transistor-Transistor Logic, ICs will use NPN and PNP type Bipolar Junction Transistors. CMOS, or Complementary Metal-Oxide-Silicon, ICs are constructed from MOSFET or JFET type Field Effect Transistors. TTL IC's may commonly be labeled as the 7400 series of chips, while CMOS ICs may often be marked as a 4000 series of chips.</p>
+</center>
+<p>&nbsp;</p>

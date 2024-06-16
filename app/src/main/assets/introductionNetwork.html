@@ -1,0 +1,41 @@
+<h1 class="h1">Network Layer</h1>
+<ul class="points">
+<li>The Network Layer is the third layer of the OSI model.</li>
+<li>It handles the service requests from the transport layer and further forwards the service request to the data link layer.</li>
+<li>The network layer translates the logical addresses into physical addresses</li>
+<li>It determines the route from the source to the destination and also manages the traffic problems such as switching, routing and controls the congestion of data packets.</li>
+<li>The main role of the network layer is to move the packets from sending host to the receiving host.</li>
+</ul>
+<h3 class="h4">The main functions performed by the network layer are:</h3>
+<ul class="points">
+<li><strong>Routing:</strong>&nbsp;When a packet reaches the router's input link, the router will move the packets to the router's output link. For example, a packet from S1 to R1 must be forwarded to the next router on the path to S2.</li>
+<li><strong>Logical Addressing:</strong>&nbsp;The data link layer implements the physical addressing and network layer implements the logical addressing. Logical addressing is also used to distinguish between source and destination system. The network layer adds a header to the packet which includes the logical addresses of both the sender and the receiver.</li>
+<li><strong>Internetworking:</strong>&nbsp;This is the main role of the network layer that it provides the logical connection between different types of networks.</li>
+<li><strong>Fragmentation:</strong>&nbsp;The fragmentation is a process of breaking the packets into the smallest individual data units that travel through different networks.</li>
+</ul>
+<h2 class="h2">Forwarding &amp; Routing</h2>
+<p>In Network layer, a router is used to forward the packets. Every router has a forwarding table. A router forwards a packet by examining a packet's header field and then using the header field value to index into the forwarding table. The value stored in the forwarding table corresponding to the header field value indicates the router's outgoing interface link to which the packet is to be forwarded.</p>
+<p>For example, the router with a header field value of 0111 arrives at a router, and then router indexes this header value into the forwarding table that determines the output link interface is 2. The router forwards the packet to the interface 2. The routing algorithm determines the values that are inserted in the forwarding table. The routing algorithm can be centralized or decentralized.</p>
+<h3 class="h4">Services Provided by the Network Layer</h3>
+<ul class="points">
+<li><strong>Guaranteed delivery:</strong>&nbsp;This layer provides the service which guarantees that the packet will arrive at its destination.</li>
+<li><strong>Guaranteed delivery with bounded delay:</strong>&nbsp;This service guarantees that the packet will be delivered within a specified host-to-host delay bound.</li>
+<li><strong>In-Order packets:</strong>&nbsp;This service ensures that the packet arrives at the destination in the order in which they are sent.</li>
+<li><strong>Guaranteed max jitter:</strong>&nbsp;This service ensures that the amount of time taken between two successive transmissions at the sender is equal to the time between their receipt at the destination.</li>
+<li><strong>Security services:</strong>&nbsp;The network layer provides security by using a session key between the source and destination host. The network layer in the source host encrypts the payloads of datagrams being sent to the destination host. The network layer in the destination host would then decrypt the payload. In such a way, the network layer maintains the data integrity and source authentication services.</li>
+</ul>
+<h3>Design Issues with Network Layer</h3>
+<ul class="content">
+<li>A key design issue is&nbsp;<strong>determining how packets are routed from source to destination</strong>. Routes can be based on static tables that are wired into the network and rarely changed. They can also be highly dynamic, being determined anew for each packet, to reflect the current network load.</li>
+<li>If&nbsp;<strong>too many packets</strong>&nbsp;are present in the subnet at the same time, they will get into one another's way, forming&nbsp;<strong>bottlenecks</strong>. The&nbsp;<strong>control of such congestion</strong>&nbsp;also belongs to the network layer.</li>
+<li>Moreover, the&nbsp;<strong>quality of service</strong>&nbsp;provided(delay, transmit time, jitter, etc) is also a network layer issue.</li>
+<li>When a packet has to&nbsp;<strong>travel from one network to another to get to its destination</strong>, many problems can arise such as:
+<ul class="content">
+<li>The addressing used by the second network may be different from the first one.</li>
+<li>The second one may not accept the packet at all because it is too large.</li>
+<li>The protocols may differ, and so on.</li>
+</ul>
+</li>
+<li>It is up to the network layer to overcome all these problems to allow heterogeneous networks to be interconnected.</li>
+</ul>
+<p>&nbsp;</p>

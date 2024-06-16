@@ -1,0 +1,118 @@
+<h1>Network switch</h1>
+<p>A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses MAC addresses to forward data at the data link layer of the OSI model.</p>
+<h1 class="h1">Switching techniques</h1>
+<p>In large networks, there can be multiple paths from sender to receiver. The switching technique will decide the best route for data transmission.</p>
+<p>Switching technique is used to connect the systems for making one-to-one communication.</p>
+<h2><strong>Classification Of Switching Techniques</strong></h2>
+<h2 class="h2">Circuit Switching</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>Circuit switching is a switching technique that establishes a dedicated path between sender and receiver.</li>
+<li>In the Circuit Switching Technique, once the connection is established then the dedicated path will remain to exist until the connection is terminated.</li>
+<li>Circuit switching in a network operates in a similar way as the telephone works.</li>
+<li>A complete end-to-end path must exist before the communication takes place.</li>
+<li>In case of circuit switching technique, when any user wants to send the data, voice, video, a request signal is sent to the receiver then the receiver sends back the acknowledgment to ensure the availability of the dedicated path. After receiving the acknowledgment, dedicated path transfers the data.</li>
+<li>Circuit switching is used in public telephone network. It is used for voice transmission.</li>
+<li>Fixed data can be transferred at a time in circuit switching technology.</li>
+</ul>
+<p><strong>Communication through circuit switching has 3 phases:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>Circuit establishment</li>
+<li>Data transfer</li>
+<li>Circuit Disconnect</li>
+</ul>
+<p>Circuit Switching can use either of the two technologies:</p>
+<h3 class="h3">Space Division Switches:</h3>
+<ul class="points" style="list-style-type: circle;">
+<li>Space Division Switching is a circuit switching technology in which a single transmission path is accomplished in a switch by using a physically separate set of crosspoints.</li>
+<li>Space Division Switching can be achieved by using crossbar switch. A crossbar switch is a metallic crosspoint or semiconductor gate that can be enabled or disabled by a control unit.</li>
+<li>The Crossbar switch is made by using the semiconductor. For example, Xilinx crossbar switch using FPGAs.</li>
+<li>Space Division Switching has high speed, high capacity, and nonblocking switches.</li>
+</ul>
+<p><strong>Space Division Switches can be categorized in two ways:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li><strong>Crossbar Switch</strong></li>
+<li><strong>Multistage Switch</strong></li>
+</ul>
+<h3 class="h4">Crossbar Switch</h3>
+<p>The Crossbar switch is a switch that has n input lines and n output lines. The crossbar switch has n<sup>2</sup>&nbsp;intersection points known as&nbsp;<strong>crosspoints.</strong></p>
+<p><strong>Disadvantage of Crossbar switch:</strong></p>
+<p>The number of crosspoints increases as the number of stations is increased. Therefore, it becomes very expensive for a large switch. The solution to this is to use a multistage switch.</p>
+<h3 class="h4">Multistage Switch</h3>
+<ul class="points" style="list-style-type: circle;">
+<li>Multistage Switch is made by splitting the crossbar switch into the smaller units and then interconnecting them.</li>
+<li>It reduces the number of crosspoints.</li>
+<li>If one path fails, then there will be an availability of another path.</li>
+</ul>
+<p><strong>Advantages Of Circuit Switching:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>In the case of Circuit Switching technique, the communication channel is dedicated.</li>
+<li>It has fixed bandwidth.</li>
+</ul>
+<p><strong>Disadvantages Of Circuit Switching:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>Once the dedicated path is established, the only delay occurs in the speed of data transmission.</li>
+<li>It takes a long time to establish a connection approx 10 seconds during which no data can be transmitted.</li>
+<li>It is more expensive than other switching techniques as a dedicated path is required for each connection.</li>
+<li>It is inefficient to use because once the path is established and no data is transferred, then the capacity of the path is wasted.</li>
+<li>In this case, the connection is dedicated therefore no other data can be transferred even if the channel is free.</li>
+</ul>
+<h2 class="h2">Message Switching</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>Message Switching is a switching technique in which a message is transferred as a complete unit and routed through intermediate nodes at which it is stored and forwarded.</li>
+<li>In Message Switching technique, there is no establishment of a dedicated path between the sender and receiver.</li>
+<li>The destination address is appended to the message. Message Switching provides a dynamic routing as the message is routed through the intermediate nodes based on the information available in the message.</li>
+<li>Message switches are programmed in such a way so that they can provide the most efficient routes.</li>
+<li>Each and every node stores the entire message and then forward it to the next node. This type of network is known as&nbsp;<strong>store and forward network.</strong></li>
+<li>Message switching treats each message as an independent entity.</li>
+</ul>
+<p><strong>Advantages Of Message Switching</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>Data channels are shared among the communicating devices that improve the efficiency of using available bandwidth.</li>
+<li>Traffic congestion can be reduced because the message is temporarily stored in the nodes.</li>
+<li>Message priority can be used to manage the network.</li>
+<li>The size of the message which is sent over the network can be varied. Therefore, it supports the data of unlimited size.</li>
+</ul>
+<p><strong>Disadvantages Of Message Switching</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>The message switches must be equipped with sufficient storage to enable them to store the messages until the message is forwarded.</li>
+<li>The Long delay can occur due to the storing and forwarding facility provided by the message switching technique.</li>
+</ul>
+<h2 class="h2">Packet Switching</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>The packet switching is a switching technique in which the message is sent in one go, but it is divided into smaller pieces, and they are sent individually.</li>
+<li>The message splits into smaller pieces known as packets and packets are given a unique number to identify their order at the receiving end.</li>
+<li>Every packet contains some information in its headers such as source address, destination address and sequence number.</li>
+<li>Packets will travel across the network, taking the shortest path as possible.</li>
+<li>All the packets are reassembled at the receiving end in correct order.</li>
+<li>If any packet is missing or corrupted, then the message will be sent to resend the message.</li>
+<li>If the correct order of the packets is reached, then the acknowledgment message will be sent.</li>
+</ul>
+<h2 class="h3">Approaches Of Packet Switching:</h2>
+<p>There are two approaches to Packet Switching:</p>
+<h3 class="h4">Datagram Packet switching:</h3>
+<ul class="points" style="list-style-type: circle;">
+<li>It is a packet switching technology in which packet is known as a datagram, is considered as an independent entity. Each packet contains the information about the destination and switch uses this information to forward the packet to the correct destination.</li>
+<li>The packets are reassembled at the receiving end in correct order.</li>
+<li>In Datagram Packet Switching technique, the path is not fixed.</li>
+<li>Intermediate nodes take the routing decisions to forward the packets.</li>
+<li>Datagram Packet Switching is also known as connectionless switching.</li>
+</ul>
+<h3 class="h4">Virtual Circuit Switching</h3>
+<ul class="points" style="list-style-type: circle;">
+<li>Virtual Circuit Switching is also known as connection-oriented switching.</li>
+<li>In the case of Virtual circuit switching, a preplanned route is established before the messages are sent.</li>
+<li>Call request and call accept packets are used to establish the connection between sender and receiver.</li>
+<li>In this case, the path is fixed for the duration of a logical connection.</li>
+</ul>
+<p><strong>Advantages Of Packet Switching:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li><strong>Cost-effective:</strong>&nbsp;In packet switching technique, switching devices do not require massive secondary storage to store the packets, so cost is minimized to some extent. Therefore, we can say that the packet switching technique is a cost-effective technique.</li>
+<li><strong>Reliable:</strong>&nbsp;If any node is busy, then the packets can be rerouted. This ensures that the Packet Switching technique provides reliable communication.</li>
+<li><strong>Efficient:</strong>&nbsp;Packet Switching is an efficient technique. It does not require any established path prior to the transmission, and many users can use the same communication channel simultaneously, hence makes use of available bandwidth very efficiently.</li>
+</ul>
+<p><strong>Disadvantages Of Packet Switching:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>Packet Switching technique cannot be implemented in those applications that require low delay and high-quality services.</li>
+<li>The protocols used in a packet switching technique are very complex and requires high implementation cost.</li>
+<li>If the network is overloaded or corrupted, then it requires retransmission of lost packets. It can also lead to the loss of critical information if errors are nor recovered.</li>
+</ul>

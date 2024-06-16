@@ -1,0 +1,54 @@
+<h1>Operating System - I/O Hardware</h1>
+<h2>Overview</h2>
+<p>Computers operate on many kinds of devices. General types include storage devices (disks, tapes),transmission devices (network cards, modems), and human-interface devices (screen, keyboard, mouse). Other devices are more specialized. A device communicates with a computer system by sending signals over a cable or even through the air. The device communicates with the machine via a connection point termed a port (for example, a serial port). If one or more devices use a common set of wires, the connection is called a bus.In other terms, a bus is a set of wires and a rigidly defined protocol that specifies a set of messages that can be sent on the wires.</p>
+<h2>Daisy chain</h2>
+<p>When device A has a cable that plugs into device B, and device B has a cable that plugs into device C, and device C plugs into a port on the computer, this arrangement is called a daisy chain. It usually operates as a bus.</p>
+<h2>Controller</h2>
+<p>A controller is a collection of electronics that can operate a port, a bus, or a device. A serial-port controller is an example of a simple device controller. This is a single chip in the computer that controls the signals on the wires of a serial port. The SCSI bus controller is often implemented as a separate circuit board (a host adapter) that plugs into the computer. It contains a processor, microcode, and some private memory to enable it to process the SCSI protocol messages. Some devices have their own built-in controllers.</p>
+<h2>I/O port</h2>
+<p>An I/O port typically consists of four registers, called the status , control, data-in, and data-outregisters.</p>
+<h3>Status Register</h3>
+<p>The status register contains bits that can be read by the host. These bits indicate states such as whether the current command has completed, whether a byte is available to be read from the data-in register, and whether there has been a device error.</p>
+<h3>Control register</h3>
+<p>The control register can be written by the host to start a command or to change the mode of a device. For instance, a certain bit in the control register of a serial port chooses between fullduplex and half-duplex communication, another enables parity checking, a third bit sets the word length to 7 or 8 bits, and other bits select one of the speeds supported by the serial port.</p>
+<h3>Data-in register</h3>
+<p>The data-in register is read by the host to get input.</p>
+<h3>Data-out register</h3>
+<p>The data out register is written by the host to send output.</p>
+<h2>Polling</h2>
+<p>Polling is a process by which a host waits for controller response.It is a looping process, reading the status register over and over until the busy bit of status register becomes clear. The controller uses/sets the busy bit when it is busy working on a command, and clears the busy bit when it is ready to accept the next command. The host signals its wish via the command-ready bit in the command register. The host sets the command-ready bit when a command is available for the controller to execute.</p>
+<p>In the following example, the host writes output through a port, coordinating with the controller by handshaking</p>
+<p>The host repeatedly reads the busy bit until that bit becomes clear.</p>
+<p>The host sets the write bit in the command register and writes a byte into the data-out register.</p>
+<p>The host sets the command-ready bit.</p>
+<p>When the controller notices that the command-ready bit is set, it sets the busy bit.</p>
+<p>The controller reads the command register and sees the write command.</p>
+<p>It reads the data-out register to get the byte, and does the I/O to the device.</p>
+<p>The controller clears the command-ready bit, clears the error bit in the status register to indicate that the device I/O succeeded, and clears the busy bit to indicate that it is finished.</p>
+<h2>I/O devices</h2>
+<p>I/O Devices can be categorized into following category.</p>
+<h3>Human readable</h3>
+<p>Human Readable devices are suitable for communicating with the computer user. Examples are printers, video display terminals, keyboard etc.</p>
+<h3>Machine readable</h3>
+<p>Machine Readable devices are suitable for communicating with electronic equipment. Examples are disk and tape drives, sensors, controllers and actuators.</p>
+<h3>Communication</h3>
+<p>Communication devices are suitable for communicating with remote devices. Examples are digital line drivers and modems.</p>
+<h2>Following are the differences between I/O Devices</h2>
+<h3>Data rate</h3>
+<p>There may be differences of several orders of magnitude between the data transfer rates.</p>
+<h3>Application</h3>
+<p>Different devices have different use in the system</p>
+<h3>Complexity of Control</h3>
+<p>A disk is much more complex whereas printer requires simple control interface.</p>
+<h3>Unit of transfer</h3>
+<p>Data may be transferred as a stream of bytes or characters or in larger blocks.</p>
+<h3>Data representation</h3>
+<p>Different data encoding schemes are used for different devices.</p>
+<h3>Error Conditions</h3>
+<p>The nature of errors differs widely from one device to another.</p>
+<h2>Direct Memory Access (DMA)</h2>
+<p>Many computers avoid burdening the main CPU with programmed I/O by offloading some of this work to a special purpose processor. This type of processor is called, a Direct Memory Access(DMA) controller. A special control unit is used to transfer block of data directly between an external device and the main memory, without intervention by the processor. This approach is called Direct Memory Access(DMA).</p>
+<p>DMA can be used with either polling or interrupt software. DMA is particularly useful on devices like disks, where many bytes of information can be transferred in single I/O operations. When used with an interrupt, the CPU is notified only after the entire block of data has been transferred. For each byte or word transferred, it must provide the memory address and all the bus signals controlling the data transfer. Interaction with a device controller is managed through a device driver.</p>
+<p>Handshaking is a process between the DMA controller and the device controller. It is performed via wires using terms DMA request and DMA acknowledge.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

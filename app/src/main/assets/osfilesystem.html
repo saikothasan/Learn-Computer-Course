@@ -1,0 +1,239 @@
+<h2>File System</h2>
+<p>A file is a collection of correlated information which is recorded on secondary or non-volatile storage like magnetic disks, optical disks, and tapes. It is a method of data collection that is used as a medium for giving input and receiving output from that program.</p>
+<p>In general, a file is a sequence of bits, bytes, or records whose meaning is defined by the file creator and user. Every File has a logical location where they are located for storage and retrieval.</p>
+<h2>Objective of File management System</h2>
+<p>Here are the main objectives of the file management system:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>It provides I/O support for a variety of storage device types.</p>
+</li>
+<li>
+<p>Minimizes the chances of lost or destroyed data</p>
+</li>
+<li>
+<p>Helps OS to standardized I/O interface routines for user processes.</p>
+</li>
+<li>
+<p>It provides I/O support for multiple users in a multiuser systems environment.</p>
+</li>
+</ul>
+<h2>Properties of a File System</h2>
+<p>Here, are important properties of a file system:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>Files are stored on disk or other storage and do not disappear when a user logs off.</p>
+</li>
+<li>
+<p>Files have names and are associated with access permission that permits controlled sharing.</p>
+</li>
+<li>
+<p>Files could be arranged or more complex structures to reflect the relationship between them.</p>
+</li>
+</ul>
+<h2>File structure</h2>
+<p>A File Structure needs to be predefined format in such a way that an operating system understands . It has an exclusively defined structure, which is based on its type.</p>
+<p>Three types of files structure in OS:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>A text file: It is a series of characters that is organized in lines.</p>
+</li>
+<li>
+<p>An object file: It is a series of bytes that is organized into blocks.</p>
+</li>
+<li>
+<p>A source file: It is a series of functions and processes.</p>
+</li>
+</ul>
+<h2>File Attributes</h2>
+<p>A file has a name and data. Moreover, it also stores meta information like file creation date and time, current size, last modified date, etc. All this information is called the attributes of a file system.</p>
+<p>Here, are some important File attributes used in OS:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p><strong>Name:</strong>&nbsp;It is the only information stored in a human-readable form.</p>
+</li>
+<li>
+<p><strong>Identifier</strong>: Every file is identified by a unique tag number within a file system known as an identifier.</p>
+</li>
+<li>
+<p><strong>Location:</strong>&nbsp;Points to file location on device.</p>
+</li>
+<li>
+<p><strong>Type:</strong>&nbsp;This attribute is required for systems that support various types of files.</p>
+</li>
+<li>
+<p><strong>Size</strong>. Attribute used to display the current file size.</p>
+</li>
+<li>
+<p><strong>Protection</strong>. This attribute assigns and controls the access rights of reading, writing, and executing the file.</p>
+</li>
+<li>
+<p><strong>Time, date and security:</strong>&nbsp;It is used for protection, security, and also used for monitoring</p>
+</li>
+</ul>
+<h2>File Type</h2>
+<p>It refers to the ability of the operating system to differentiate various types of files like text files, binary, and source files. However, Operating systems like MS_DOS and UNIX has the following type of files:</p>
+<h3>Character Special File</h3>
+<p>It is a hardware file that reads or writes data character by character, like mouse, printer, and more.</p>
+<h3>Ordinary files</h3>
+<ul style="list-style-type: circle;">
+<li>
+<p>These types of files stores user information.</p>
+</li>
+<li>
+<p>It may be text, executable programs, and databases.</p>
+</li>
+<li>
+<p>It allows the user to perform operations like add, delete, and modify.</p>
+</li>
+</ul>
+<h3>Directory Files</h3>
+<ul style="list-style-type: circle;">
+<li>Directory contains files and other related information about those files. Its basically a folder to hold and organize multiple files.</li>
+</ul>
+<h3>Special Files</h3>
+<ul style="list-style-type: circle;">
+<li>These files are also called device files. It represents physical devices like printers, disks, networks, flash drive, etc.</li>
+</ul>
+<h2>Functions of File</h2>
+<ul style="list-style-type: circle;">
+<li>
+<p>Create file, find space on disk, and make an entry in the directory.</p>
+</li>
+<li>
+<p>Write to file, requires positioning within the file</p>
+</li>
+<li>
+<p>Read from file involves positioning within the file</p>
+</li>
+<li>
+<p>Delete directory entry, regain disk space.</p>
+</li>
+<li>
+<p>Reposition: move read/write position.</p>
+</li>
+</ul>
+<h2>Commonly used terms in File systems</h2>
+<h3>Field:</h3>
+<p>This element stores a single value, which can be static or variable length.</p>
+<h3>DATABASE:</h3>
+<p>Collection of related data is called a database. Relationships among elements of data are explicit.</p>
+<h3>FILES:</h3>
+<p>Files is the collection of similar record which is treated as a single entity.</p>
+<h3>RECORD:</h3>
+<p>A Record type is a complex data type that allows the programmer to create a new data type with the desired column structure. Its groups one or more columns to form a new data type. These columns will have their own names and data type.</p>
+<h2>File Access Methods</h2>
+<p>File access is a process that determines the way that files are accessed and read into memory. Generally, a single access method is always supported by operating systems. Though there are some operating system which also supports multiple access methods.</p>
+<p>Three file access methods are:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>Sequential access</p>
+</li>
+<li>
+<p>Direct random access</p>
+</li>
+<li>
+<p>Index sequential access</p>
+</li>
+</ul>
+<h3>Sequential Access</h3>
+<p>In this type of file access method, records are accessed in a certain pre-defined sequence. In the sequential access method, information stored in the file is also processed one by one. Most compilers access files using this access method.</p>
+<h3>Random Access</h3>
+<p>The random access method is also called direct random access. This method allow accessing the record directly. Each record has its own address on which can be directly accessed for reading and writing.</p>
+<h3>Sequential Access</h3>
+<p>This type of accessing method is based on simple sequential access. In this access method, an index is built for every file, with a direct pointer to different memory blocks. In this method, the Index is searched sequentially, and its pointer can access the file directly. Multiple levels of indexing can be used to offer greater efficiency in access. It also reduces the time needed to access a single record.</p>
+<h2>File Directories</h2>
+<p>A single directory may or may not contain multiple files. It can also have sub-directories inside the main directory. Information about files is maintained by Directories. In Windows OS, it is called folders.</p>
+<p>Following is the information which is maintained in a directory:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p><strong>Name</strong>&nbsp;The name which is displayed to the user.</p>
+</li>
+<li>
+<p><strong>Type</strong>: Type of the directory.</p>
+</li>
+<li>
+<p><strong>Position</strong>: Current next-read/write pointers.</p>
+</li>
+<li>
+<p><strong>Location</strong>: Location on the device where the file header is stored.</p>
+</li>
+<li>
+<p><strong>Size</strong>&nbsp;: Number of bytes, block, and words in the file.</p>
+</li>
+<li>
+<p><strong>Protection</strong>: Access control on read/write/execute/delete.</p>
+</li>
+<li>
+<p><strong>Usage</strong>: Time of creation, access, modification</p>
+</li>
+</ul>
+<h2>File types- name, extension</h2>
+<table class="table table-striped">
+<tbody>
+<tr>
+<td><strong>File Type</strong></td>
+<td><strong>Usual extension</strong></td>
+<td><strong>Function</strong></td>
+</tr>
+<tr>
+<td>Executable</td>
+<td>exe, com, bin or none</td>
+<td>ready-to-run machine- language program</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>obj, o</td>
+<td>complied, machine language, not linked</td>
+</tr>
+<tr>
+<td>Source code</td>
+<td>c. p, pas, 177, asm, a‭‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬</td>
+<td>source code in various languages‭‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬</td>
+</tr>
+<tr>
+<td>Batch</td>
+<td>bat, sh</td>
+<td>Series of commands to be executed</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>txt, doc</td>
+<td>textual data documents</td>
+</tr>
+<tr>
+<td>Word processor</td>
+<td>doc,docs, tex, rrf, etc.</td>
+<td>various word-processor formats‭ ‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬</td>
+</tr>
+<tr>
+<td>Library</td>
+<td>lib, h</td>
+<td>libraries of routines</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td>arc, zip, tar</td>
+<td>related files grouped into one file, sometimes compressed.</td>
+</tr>
+</tbody>
+</table>
+<h3><br />Summary:</h3>
+<ul>
+<li>A file is a collection of correlated information which is recorded on secondary or non-volatile storage like magnetic disks, optical disks, and tapes.</li>
+<li>It provides I/O support for a variety of storage device types.</li>
+<li>Files are stored on disk or other storage and do not disappear when a user logs off.</li>
+<li>A File Structure needs to be predefined format in such a way that an operating system understands it.</li>
+<li>File type refers to the ability of the operating system to differentiate different types of files like text files, binary, and source files.</li>
+<li>Create find space on disk and make an entry in the directory.</li>
+<li>Indexed Sequential Access method is based on simple sequential access</li>
+<li>In Sequential Access method records are accessed in a certain pre-defined sequence</li>
+<li>The random access method is also called direct random access</li>
+<li>Three types of space allocation methods are:
+<ul>
+<li>Linked Allocation</li>
+<li>Indexed Allocation</li>
+<li>Contiguous Allocation</li>
+</ul>
+</li>
+<li>Information about files is maintained by Directories</li>
+</ul>

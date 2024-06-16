@@ -1,0 +1,70 @@
+<h1>Input/Output OS Software</h1>
+<p>Basically, input/output software organized in the following four layers:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>Interrupt handlers</p>
+</li>
+<li>
+<p>Device drivers</p>
+</li>
+<li>
+<p>Device-independent input/output software</p>
+</li>
+<li>
+<p>User-space input/output software</p>
+</li>
+</ul>
+<p>In every input/output software, each of the above given four layer has a well-defined function to perform and a well-defined interface to the adjacent layers.</p>
+<p>Now let's describe briefly, all the four input/output software layers that are listed above.</p>
+<h2>Interrupt Handlers</h2>
+<p>Whenever the interrupt occurs, then the interrupt procedure does whatever it has to in order to handle the interrupt.</p>
+<h2>Device Drivers</h2>
+<p>Basically, device drivers is a device-specific code just for controlling the input/output device that are attached to the computer system.</p>
+<h2>Device-Independent Input/Output Software</h2>
+<p>In some of the input/output software is device specific, and other parts of that input/output software are device-independent.</p>
+<p>The exact boundary between the device-independent software and drivers is device dependent, just because of that some functions that could be done in a device-independent way sometime be done in the drivers, for efficiency or any other reasons.</p>
+<p>Here are the list of some functions that are done in the device-independent software:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>Uniform interfacing for device drivers</p>
+</li>
+<li>
+<p>Buffering</p>
+</li>
+<li>
+<p>Error reporting</p>
+</li>
+<li>
+<p>Allocating and releasing dedicated devices</p>
+</li>
+<li>
+<p>Providing a device-independent block size</p>
+</li>
+</ul>
+<h2>User-Space Input/Output Software</h2>
+<p>Generally most of the input/output software is within the operating system (OS), and some small part of that input/output software consists of libraries that are linked with the user programs and even whole programs running outside the kernel.</p>
+<p>&nbsp;</p>
+<h2>Goals of the I/O Software</h2>
+<ul style="list-style-type: circle;">
+<li>
+<p>A key concept in the design of I/O software is known as&nbsp;<strong>device independence</strong>. It means that I/O devices should be accessible to programs without specifying the device in advance.</p>
+</li>
+<li>
+<p><strong>Uniform Naming</strong>, simply be a string or an integer and not depend on the device in any way. In UNIX, all disks can be integrated in the file-system hierarchy in arbitrary ways so the user need not be aware of which name corresponds to which device.</p>
+</li>
+<li>
+<p><strong>Error Handling</strong>: If the controller discovers a read error, it should try to correct the error itself if it can. If it cannot, then the device driver should handle it, perhaps by just trying to read the block again. In many cases, error recovery can be done transparently at a low level without the upper levels even knowing about the error.</p>
+</li>
+<li>
+<p><strong>Synchronous (blocking) and Asynchronous (interrupt-driven) transfers</strong>: Most physical I/O is asynchronous, however, some very high-performance applications need to control all the details of the I/O, so some operating systems make asynchronous I/O available to them.</p>
+</li>
+<li>
+<p><strong>Buffering</strong>: Often data that come off a device cannot be stored directly in their final destination.</p>
+</li>
+<li>
+<p><strong>Sharable and Dedicated devices</strong>: Some I/O devices, such as disks, can be used by many users at the same time. No problems are caused by multiple users having open files on the same disk at the same time. Other devices, such as printers, have to be dedicated to a single user until that user is finished. Then another user can have the printer. Introducing dedicated (unshared) devices also introduces a variety of problems, such as deadlocks. Again, the operating system must be able to handle both shared and dedicated devices in a way that avoids problems.</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

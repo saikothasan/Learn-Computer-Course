@@ -1,0 +1,113 @@
+<h1>Use cell references in a formula</h1>
+<p>When you create a simple formula or a formula by that uses a function, you can refer to data in worksheet cells by including cell references in the formula arguments. For example, when you enter or select the cell reference&nbsp;<strong class="ocpLegacyBold">A2</strong>, the formula uses the value of that cell to calculate the result. You can also reference a range of cells.</p>
+<ol type="1">
+<li>
+<p>Click the cell in which you want to enter the formula.</p>
+</li>
+<li>
+<p>In the formula bar&nbsp;<img src="formularefexcel1.gif" alt="Button image" />&nbsp;, type&nbsp;<strong class="ocpLiteral">=</strong>&nbsp;(equal sign).</p>
+</li>
+<li>
+<p>Do one of the following, select the cell that contains the value you want or type its cell reference.</p>
+<p>You can refer to a single cell, a range of cells, a location in another worksheet, or a location in another workbook.</p>
+<p>When selecting a range of cells, you can drag the border of the cell selection to move the selection, or drag the corner of the border to expand the selection.</p>
+<p><img src="formularefexcel2.gif" alt="Range Finder color-codes precedent cells" /></p>
+<p>1. The first cell reference is B3, the color is blue, and the cell range has a blue border with square corners.</p>
+<p>2. The second cell reference is C3, the color is green, and the cell range has a green border with square corners.</p>
+<div class="ocpAlert">
+<p class="ocpAlertSection"><strong class="ocpNote">Note:</strong>&nbsp;If there is no square corner on a color-coded border, the reference is to a named range.</p>
+</div>
+</li>
+<li>
+<p>Press Enter.</p>
+<div class="ocpAlert">
+<p class="ocpAlertSection"><strong class="ocpNote">Tip:</strong>&nbsp; You can also enter a reference to a named cell or range.</p>
+<p class="ocpAlertSection">&nbsp;</p>
+<h2 class="">Example</h2>
+<p>Copy the example data in the following table, and paste it in cell A1 of a new Excel worksheet. For formulas to show results, select them, press F2, and then press Enter. If you need to, you can adjust the column widths to see all the data. Use the Define Name command (<strong class="ocpUI">Formulas</strong>&nbsp;tab,&nbsp;<strong class="ocpUI">Defined Names</strong>&nbsp;group) to define "Assets" (B2:B4) and "Liabilities" (C2:C4).</p>
+<table id="tblID0EBBBAAA" class="banded flipColors" style="width: 686px;">
+<thead>
+<tr>
+<th style="width: 115px;">
+<p><strong class="ocpLegacyBold">Department</strong></p>
+</th>
+<th style="width: 259px;">
+<p><strong class="ocpLegacyBold">Assets</strong></p>
+</th>
+<th style="width: 290px;">
+<p><strong class="ocpLegacyBold">Liabilities</strong></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 115px;">
+<p>IT</p>
+</td>
+<td style="width: 259px;">
+<p>274000</p>
+</td>
+<td style="width: 290px;">
+<p>71000</p>
+</td>
+</tr>
+<tr>
+<td style="width: 115px;">
+<p>Admin</p>
+</td>
+<td style="width: 259px;">
+<p>67000</p>
+</td>
+<td style="width: 290px;">
+<p>18000</p>
+</td>
+</tr>
+<tr>
+<td style="width: 115px;">
+<p>HR</p>
+</td>
+<td style="width: 259px;">
+<p>44000</p>
+</td>
+<td style="width: 290px;">
+<p>3000</p>
+</td>
+</tr>
+<tr>
+<td style="width: 115px;">
+<p><strong class="ocpLegacyBold">Formula</strong></p>
+</td>
+<td style="width: 259px;">
+<p><strong class="ocpLegacyBold">Description</strong></p>
+</td>
+<td style="width: 290px;">
+<p><strong class="ocpLegacyBold">Result</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 115px;">
+<p>'=SUM(Assets)</p>
+</td>
+<td style="width: 259px;">
+<p>Returns the total of the assets for the three departments in defined name "Assets," which is defined as the cell range B2:B4. (385000)</p>
+</td>
+<td style="width: 290px;">
+<p>=SUM(Assets)</p>
+</td>
+</tr>
+<tr>
+<td style="width: 115px;">
+<p>'=SUM(Assets)-SUM(Liabilities)</p>
+</td>
+<td style="width: 259px;">
+<p>Subtracts the sum of the defined name "Liabilities" from the sum of the defined name "Assets." (293000)</p>
+</td>
+<td style="width: 290px;">
+<p>=SUM(Assets)-SUM(Liabilities)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>

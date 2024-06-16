@@ -1,0 +1,67 @@
+<h1 class="h1">TCP</h1>
+<p>TCP stands for&nbsp;<strong>Transmission Control Protocol</strong>. It is a transport layer protocol that facilitates the transmission of packets from source to destination. It is a connection-oriented protocol that means it establishes the connection prior to the communication that occurs between the computing devices in a network. This protocol is used with an IP protocol, so together, they are referred to as a TCP/IP.</p>
+<p>The main functionality of the TCP is to take the data from the application layer. Then it divides the data into a several packets, provides numbering to these packets, and finally transmits these packets to the destination. The TCP, on the other side, will reassemble the packets and transmits them to the application layer. As we know that TCP is a connection-oriented protocol, so the connection will remain established until the communication is not completed between the sender and the receiver.</p>
+<h3 class="h3">Features of TCP protocol</h3>
+<p><strong>The following are the features of a TCP protocol:</strong></p>
+<ul class="points">
+<li><strong>Transport Layer Protocol</strong></li>
+</ul>
+<p>TCP is a transport layer protocol as it is used in transmitting the data from the sender to the receiver.</p>
+<ul class="points">
+<li><strong>Reliable</strong></li>
+</ul>
+<p>TCP is a reliable protocol as it follows the flow and error control mechanism. It also supports the acknowledgment mechanism, which checks the state and sound arrival of the data. In the acknowledgment mechanism, the receiver sends either positive or negative acknowledgment to the sender so that the sender can get to know whether the data packet has been received or needs to resend.</p>
+<ul class="points">
+<li><strong>Order of the data is maintained</strong></li>
+</ul>
+<p>This protocol ensures that the data reaches the intended receiver in the same order in which it is sent. It orders and numbers each segment so that the TCP layer on the destination side can reassemble them based on their ordering.</p>
+<ul class="points">
+<li><strong>Connection-oriented</strong></li>
+</ul>
+<p>It is a connection-oriented service that means the data exchange occurs only after the connection establishment. When the data transfer is completed, then the connection will get terminated.</p>
+<ul class="points">
+<li><strong>Full duplex</strong></li>
+</ul>
+<p>It is a full-duplex means that the data can transfer in both directions at the same time.</p>
+<ul class="points">
+<li><strong>Stream-oriented</strong></li>
+</ul>
+<p>TCP is a stream-oriented protocol as it allows the sender to send the data in the form of a stream of bytes and also allows the receiver to accept the data in the form of a stream of bytes. TCP creates an environment in which both the sender and receiver are connected by an imaginary tube known as a virtual circuit. This virtual circuit carries the stream of bytes across the internet.</p>
+<h3 class="h3">Need of Transport Control Protocol</h3>
+<p>In the layered architecture of a network model, the whole task is divided into smaller tasks. Each task is assigned to a particular layer that processes the task. In the TCP/IP, five layers are application layer, transport layer, network layer, data link layer, and physical layer. The transport layer has a critical role in providing end-to-end communication to the directly application processes. It creates 65,000 ports so that the multiple applications can be accessed at the same time. It takes the data from the upper layer, and it divides the data into smaller packets and then transmits them to the network layer.</p>
+<h3 class="h3">Working of TCP</h3>
+<p>In TCP, the connection is established by using three-way handshaking. The client sends the segment with its sequence number. The server, in return, sends its segment with its own sequence number as well as the acknowledgement sequence, which is one more than the client sequence number. When the client receives the acknowledgment of its segment, then it sends the acknowledgment to the server. In this way, the connection is established between the client and the server.</p>
+<h3 class="h3">Advantages of TCP</h3>
+<ul class="points">
+<li>It provides a connection-oriented reliable service, which means that it guarantees the delivery of data packets. If the data packet is lost across the network, then the TCP will resend the lost packets.</li>
+<li>It provides a flow control mechanism using a sliding window protocol.</li>
+<li>It provides error detection by using checksum and error control by using Go Back or ARP protocol.</li>
+<li>It eliminates the congestion by using a network congestion avoidance algorithm that includes various schemes such as additive increase/multiplicative decrease (AIMD), slow start, and congestion window.</li>
+</ul>
+<h3 class="h3">Disadvantage of TCP</h3>
+<p>It increases a large amount of overhead as each segment gets its own TCP header, so fragmentation by the router increases the overhead.</p>
+<h3 class="h3">TCP Header format</h3>
+<ul class="points">
+<li><strong>Source port:</strong>&nbsp;It defines the port of the application, which is sending the data. So, this field contains the source port address, which is 16 bits.</li>
+<li><strong>Destination port:</strong>&nbsp;It defines the port of the application on the receiving side. So, this field contains the destination port address, which is 16 bits.</li>
+<li><strong>Sequence number:</strong>&nbsp;This field contains the sequence number of data bytes in a particular session.</li>
+<li><strong>Acknowledgment number:</strong>&nbsp;When the ACK flag is set, then this contains the next sequence number of the data byte and works as an acknowledgment for the previous data received. For example, if the receiver receives the segment number 'x', then it responds 'x+1' as an acknowledgment number.</li>
+<li><strong>HLEN:</strong>&nbsp;It specifies the length of the header indicated by the 4-byte words in the header. The size of the header lies between 20 and 60 bytes. Therefore, the value of this field would lie between 5 and 15.</li>
+<li><strong>Reserved:</strong>&nbsp;It is a 4-bit field reserved for future use, and by default, all are set to zero.</li>
+<li><strong>Flags</strong><br /><strong>There are six control bits or flags:</strong>
+<ol class="points">
+<li><strong>URG:</strong>&nbsp;It represents an urgent pointer. If it is set, then the data is processed urgently.</li>
+<li><strong>ACK:</strong>&nbsp;If the ACK is set to 0, then it means that the data packet does not contain an acknowledgment.</li>
+<li><strong>PSH:</strong>&nbsp;If this field is set, then it requests the receiving device to push the data to the receiving application without buffering it.</li>
+<li><strong>RST:</strong>&nbsp;If it is set, then it requests to restart a connection.</li>
+<li><strong>SYN:</strong>&nbsp;It is used to establish a connection between the hosts.</li>
+<li><strong>FIN:</strong>&nbsp;It is used to release a connection, and no further data exchange will happen.</li>
+</ol>
+</li>
+</ul>
+<ul class="points">
+<li><strong>Window size</strong><br />It is a 16-bit field. It contains the size of data that the receiver can accept. This field is used for the flow control between the sender and receiver and also determines the amount of buffer allocated by the receiver for a segment. The value of this field is determined by the receiver.</li>
+<li><strong>Checksum</strong><br />It is a 16-bit field. This field is optional in UDP, but in the case of TCP/IP, this field is mandatory.</li>
+<li><strong>Urgent pointer</strong><br />It is a pointer that points to the urgent data byte if the URG flag is set to 1. It defines a value that will be added to the sequence number to get the sequence number of the last urgent byte.</li>
+<li><strong>Options</strong><br />It provides additional options. The optional field is represented in 32-bits. If this field contains the data less than 32-bit, then padding is required to obtain the remaining bits.</li>
+</ul>

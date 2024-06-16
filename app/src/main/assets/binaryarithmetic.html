@@ -1,0 +1,57 @@
+<h1>Binary Arithmetic</h1>
+<p>Binary arithmetic is essential part of all the digital computers and many other digital system.</p>
+<h2 id="addition">Binary Addition</h2>
+<p>Binary addition is the easiest of the processes to perform. As you'll see with the other operations below, it is essentially the same way you learnt to do addition of decimal numbers by hand (probably many years ago in your early school years). The process is actually easier with binary as we only have 2 digits to worry about, 0 and 1.</p>
+<p>The process is that we line the two numbers up (one under the other), then, starting at the far right, add each column, recording the result and possible carry as we go.</p>
+<p>Here are the possibilities:</p>
+<ul>
+<li>0 + 0 = 0</li>
+<li>1 + 0 = 1</li>
+<li>1 + 1 = 2 which is 10 in binary which is 0 with a carry of 1</li>
+<li>1 + 1 + 1 (carry) = 3 which is 11 in binary which is 1 with a carry of 1</li>
+</ul>
+<p>The carry is involved whenever we have a result larger than 1 (which is the largest amount we may represent with a single binary digit).</p>
+<h3>Adding more than two numbers</h3>
+<p>It is possible to add more than 2 binary numbers in one go but it can soon get unweildly managing the carries. My suggestion is that you add the 1st and 2nd numbers together. Then take the result and add the third number to that. Then take the result and add the 4th etc. This way you may add as many binary numbers as you like and the complexity will never increase. It's a little more work but with practice you will get very quick at it.</p>
+<h2 id="multiplication">Binary Multiplication</h2>
+<p>Binary multiplication is just about as easy as binary addition. Again it is the same process as we would do with decimal multiplication by hand. Again it is easier as binary only has 0 and 1.</p>
+<p>We line the two numbers up (similar to addition). Then we multiply the entire top number by each individual digit of the bottom number. As we move across each digit we pad out the result with 0's to line it up. Finally we add all the results together.</p>
+<p>Here are the possibilities:</p>
+<ul>
+<li>0 * 0 = 0</li>
+<li>1 * 0 = 0</li>
+<li>1 * 1 = 1</li>
+</ul>
+<p>As you have no doubt noticed, the process is fairly straight forward. If the binary digit on the second row we are multiplying by is a 1 then pad out accordingly and write out the top binary number. If the binary digit on the second row we are multiplying by is a 0 then we can just write out 0's.</p>
+<h2 id="subtraction">Binary Subtraction</h2>
+<p>With binary subtraction we start to get a little more difficult (But not that difficult). Similar to binary addition, we will work through the numbers, column by column, starting on the far right. Instead of carrying forward however, we will borrow backwards (when necessary).</p>
+<p>Here are the possibilities:</p>
+<ul>
+<li>0 - 0 = 0</li>
+<li>1 - 0 = 1</li>
+<li>1 - 1 = 0</li>
+<li>0 - 1 we can't do so we borrow 1 from the next column. This makes it 10 - 1 which is 1.</li>
+</ul>
+<h3>Another approach</h3>
+<p>The above example is the most convenient way for us to do binary subtraction by hand. There is another approach however and this is the way that computers subtract binary digits. This approach is called Two's Complement.</p>
+<p>Let's say we want to compute 1000 ( 8 ) - 11 ( 3 ).</p>
+<ul>
+<li>Step 1: Write the equation out, padding the bottom number with 0's<br /><strong>1000<br />0011 -</strong></li>
+<li>Step 2: Invert the digits of the lower number<br /><strong>1000<br />1100</strong></li>
+<li>Step 3: Add 1 to the lower number<br /><strong>1000<br />1101</strong></li>
+<li>Step 4: Add those two numbers together to get&nbsp;<strong>10101</strong></li>
+<li>Step 5: Remove the leading 1 (and any 0's after it). You are left with&nbsp;<strong>101</strong>&nbsp;( 5 ).</li>
+</ul>
+<h2 id="division">Binary Division</h2>
+<p>Binary division is probably the most difficult of the binary equations. Fortunately, it is also made easier by the fact we only have to deal with 1's and 0's.</p>
+<p>First off, some terminology. The number we are dividing by is the&nbsp;<strong>divisor</strong>. The number we are dividing into is the&nbsp;<strong>dividend</strong>.</p>
+<p>The process is as follows:</p>
+<ul>
+<li>Step 1: Create the working portion of the dividend. Starting at the right, keep including digits until we have a number that the divisor will go into.</li>
+<li>Step 2: Work out how many times the divisor goes into the working portion (with binary this is easy as it will always be 1). Write this number above the line (in line with the far right digit of the working number).</li>
+<li>Step 3: Subtract the divisor from the working number. This becomes the beginning of the new working number.</li>
+<li>Step 4: Bring down digits from the dividend and add to the new working number until we have a new working number large enough for the divisor to go into.</li>
+<li>Step 5: Repeat steps 2 to 4 until we are at the end of the dividend.</li>
+<li>Step 6: The result of the final subtraction is the remainder.</li>
+</ul>
+<p>&nbsp;</p>

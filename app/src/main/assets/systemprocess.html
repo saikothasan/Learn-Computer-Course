@@ -1,0 +1,95 @@
+<h1>What is a Process?</h1>
+<p><strong>Process</strong>&nbsp;is the execution of a program that performs the actions specified in that program. It can be defined as an execution unit where a program runs. The OS helps you to create, schedule, and terminates the processes which is used by CPU. A process created by the main process is called a child process.</p>
+<p>Process operations can be easily controlled with the help of PCB(Process Control Block). You can consider it as the brain of the process, which contains all the crucial information related to processing like process id, priority, state, CPU registers, etc.</p>
+<h2>What is Process Management?</h2>
+<p>Process management involves various tasks like creation, scheduling, termination of processes, and a dead lock. Process is a program that is under execution, which is an important part of modern-day operating systems. The OS must allocate resources that enable processes to share and exchange information. It also protects the resources of each process from other methods and allows synchronization among processes.</p>
+<p>It is the job of OS to manage all the running processes of the system. It handles operations by performing tasks like process scheduling and such as resource allocation.</p>
+<h2>Process Architecture</h2>
+<p>Here, are the Architecture Steps:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p><strong>Stack:</strong>&nbsp;The Stack stores temporary data like function parameters, returns addresses, and local variables.</p>
+</li>
+<li>
+<p><strong>Heap</strong>&nbsp;Allocates memory, which may be processed during its run time.</p>
+</li>
+<li>
+<p><strong>Data:</strong>&nbsp;It contains the variable.</p>
+</li>
+<li>
+<p><strong>Text:</strong>&nbsp;Text Section includes the current activity, which is represented by the value of the Program Counter.</p>
+</li>
+</ul>
+<h2>Process Stages</h2>
+<p>There are mainly seven stages of a process which are:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>New: The new process is created when a specific program calls from secondary memory/ hard disk to primary memory/ RAM a</p>
+</li>
+<li>
+<p>Ready: In a ready state, the process should be loaded into the primary memory, which is ready for execution.</p>
+</li>
+<li>
+<p>Waiting: The process is waiting for the allocation of CPU time and other resources for execution.</p>
+</li>
+<li>
+<p>Executing: The process is an execution state.</p>
+</li>
+<li>
+<p>Blocked: It is a time interval when a process is waiting for an event like I/O operations to complete.</p>
+</li>
+<li>
+<p>Suspended: Suspended state defines the time when a process is ready for execution but has not been placed in the ready queue by OS.</p>
+</li>
+<li>
+<p>Terminated: Terminated state specifies the time when a process is terminated</p>
+</li>
+</ul>
+<h2>Process Control Block(PCB)</h2>
+<p>Every process is represented in the operating system by a process control block, which is also called a task control block.</p>
+<p>Here, are important components of PCB</p>
+<ul style="list-style-type: circle;">
+<li>
+<p><strong>Process state:&nbsp;</strong>A process can be new, ready, running, waiting, etc.</p>
+</li>
+<li>
+<p><strong>Program counter:&nbsp;</strong>The program counter lets you know the address of the next instruction, which should be executed for that process.</p>
+</li>
+<li>
+<p><strong>CPU registers:&nbsp;</strong>This component<strong>&nbsp;</strong>includes accumulators, index and general-purpose registers, and information of condition code.</p>
+</li>
+<li>
+<p><strong>CPU scheduling information:&nbsp;</strong>This component<strong>&nbsp;</strong>includes a process priority, pointers for scheduling queues, and various other scheduling parameters.</p>
+</li>
+<li>
+<p><strong>Accounting and business information:&nbsp;</strong>It includes the amount of CPU and time utilities like real time used, job or process numbers, etc.</p>
+</li>
+<li>
+<p><strong>Memory-management information:&nbsp;</strong>This information includes the value of the base and limit registers, the page, or segment tables. This depends on the memory system, which is used by the operating system.</p>
+</li>
+<li>
+<p><strong>I/O status information:&nbsp;</strong>This block includes a list of open files, the list of I/O devices that are allocated to the process, etc.</p>
+</li>
+</ul>
+<h3>Summary:</h3>
+<ul style="list-style-type: circle;">
+<li>
+<p>A process is defined as the execution of a program that performs the actions specified in that program.</p>
+</li>
+<li>
+<p>Process management involves various tasks like creation, scheduling, termination of processes, and a dead lock.</p>
+</li>
+<li>
+<p>The important elements of Process architecture are 1)Stack 2) Heap 3) Data, and 4) Text</p>
+</li>
+<li>
+<p>The PCB is a full form of Process Control Block. It is a data structure that is maintained by the Operating System for every process</p>
+</li>
+<li>
+<p>A process state is a condition of the process at a specific instant of time.</p>
+</li>
+<li>
+<p>Every process is represented in the operating system by a process control block, which is also called a task control block.</p>
+</li>
+</ul>
+<p>&nbsp;</p>

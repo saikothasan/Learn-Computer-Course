@@ -1,0 +1,107 @@
+<h1>Characteristics of Wireless Channel</h1>
+<p>The most important characteristics of wireless channel are &minus;</p>
+<ul class="list">
+<li>Path loss</li>
+<li>Fading</li>
+<li>Interference</li>
+<li>Doppler shift</li>
+</ul>
+<p>In the following sections, we will discuss these channel characteristics one by one.</p>
+<h2>Path Loss</h2>
+<p>Path loss can be expressed as the ratio of the power of the transmitted signal to the power of the same signal received by the receiver, on a given path. It is a function of the propagation distance.</p>
+<ul class="list">
+<li>
+<p>Estimation of path loss is very important for designing and deploying wireless communication networks</p>
+</li>
+<li>
+<p>Path loss is dependent on a number of factors such as the radio frequency used and the nature of the terrain.</p>
+</li>
+<li>
+<p>The free space propagation model is the simplest path loss model in which there is a direct-path signal between the transmitter and the receiver, with no atmosphere attenuation or multipath components.</p>
+</li>
+</ul>
+<p>In this model, the relationship between the transmitted power&nbsp;<strong><em>P<sub>t</sub></em></strong>&nbsp;and the received power&nbsp;<strong><em>P<sub>r</sub></em></strong>&nbsp;is given by</p>
+<p>$$P_{r} = P_{t}G_{t}G_{r}(\frac{\lambda}{4\Pi d})^2$$</p>
+<p>Where</p>
+<ul class="list">
+<li>
+<p><strong>G<sub>t</sub></strong>&nbsp;is the transmitter antenna gain</p>
+</li>
+<li>
+<p><strong>G<sub>r</sub></strong>&nbsp;is the receiver antenna gain</p>
+</li>
+<li>
+<p><strong>d</strong>&nbsp;is the distance between the transmitter and receiver</p>
+</li>
+<li>
+<p><strong>&lambda;</strong>&nbsp;is the wavelength of the signal</p>
+</li>
+</ul>
+<p>Two-way model also called as two path models is widely used path loss model. The free space model described above assumes that there is only one single path from the transmitter to the receiver.</p>
+<p>In reality, the signal reaches the receiver through multiple paths. The two path model tries to capture this phenomenon. The model assumes that the signal reaches the receiver through two paths, one a line-of-sight and the other the path through which the reflected wave is received.</p>
+<p>According to the two-path model, the received power is given by</p>
+<p>$$P_{r} = P_{t}G_{t}G_{r}(\frac{h_{t}h_{r}}{d^2})^2$$</p>
+<p>Where</p>
+<ul class="list">
+<li>
+<p><strong>p<sub>t</sub></strong>&nbsp;is the transmitted power</p>
+</li>
+<li>
+<p><strong>G<sub>t</sub></strong>&nbsp;represent the antenna gain at the transmitter</p>
+</li>
+<li>
+<p><strong>G<sub>r</sub></strong>&nbsp;represent the antenna gain at the receiver</p>
+</li>
+<li>
+<p><strong>d</strong>&nbsp;is the distance between the transmitter and receiver</p>
+</li>
+<li>
+<p><strong>h<sub>t</sub></strong>&nbsp;is the height of the transmitter</p>
+</li>
+<li>
+<p><strong>h<sub>r</sub></strong>&nbsp;are the height of the receiver</p>
+</li>
+</ul>
+<h2>Fading</h2>
+<p>Fading refers to the fluctuations in signal strength when received at the receiver. Fading can be classified in to two types &minus;</p>
+<ul class="list">
+<li>Fast fading/small scale fading and</li>
+<li>Slow fading/large scale fading</li>
+</ul>
+<p>Fast fading refers to the rapid fluctuations in the amplitude, phase or multipath delays of the received signal, due to the interference between multiple versions of the same transmitted signal arriving at the receiver at slightly different times.</p>
+<p>The time between the reception of the first version of the signal and the last echoed signal is called&nbsp;<strong>delay spread</strong>. The multipath propagation of the transmitted signal, which causes fast fading, is because of the three propagation mechanisms, namely &minus;</p>
+<ul class="list">
+<li>Reflection</li>
+<li>Diffraction</li>
+<li>Scattering</li>
+</ul>
+<p>The multiple signal paths may sometimes add constructively or sometimes destructively at the receiver causing a variation in the power level of the received signal. The received single envelope of a fast fading signal is said to follow a&nbsp;<strong>Rayleigh distribution</strong>&nbsp;to see if there is no line-of-sight path between the transmitter and the receiver.</p>
+<h3>Slow Fading</h3>
+<p>The name Slow Fading itself implies that the signal fades away slowly. The features of slow fading are as given below.</p>
+<ul class="list">
+<li>
+<p>Slow fading occurs when objects that partially absorb the transmission lie between the transmitter and receiver.</p>
+</li>
+<li>
+<p>Slow fading is so called because the duration of the fade may last for multiple seconds or minutes.</p>
+</li>
+<li>
+<p>Slow fading may occur when the receiver is inside a building and the radio wave must pass through the walls of a building, or when the receiver is temporarily shielded from the transmitter by a building. The obstructing objects cause a random variation in the received signal power.</p>
+</li>
+<li>
+<p>Slow fading may cause the received signal power to vary, though the distance between the transmitter and receiver remains the same.</p>
+</li>
+<li>
+<p>Slow fading is also referred to as&nbsp;<strong>shadow fading</strong>&nbsp;since the objects that cause the fade, which may be large buildings or other structures, block the direct transmission path from the transmitter to the receiver.</p>
+</li>
+</ul>
+<h2>Interference</h2>
+<p>Wireless transmissions have to counter interference from a wide variety of sources. Two main forms of interference are &minus;</p>
+<ul class="list">
+<li>Adjacent channel interference and</li>
+<li>Co-channel interference.</li>
+</ul>
+<p>In Adjacent channel interference case, signals in nearby frequencies have components outside their allocated ranges, and these components may interfere with on-going transmission in the adjacent frequencies. It can be avoided by carefully introducing guard bands between the allocated frequency ranges.</p>
+<p><strong>Co-channel interference</strong>, sometimes also referred to as&nbsp;<strong>narrow band interference</strong>, is due to other nearby systems using the same transmission frequency.</p>
+<p><strong>Inter-symbol interference</strong>&nbsp;is another type of interference, where distortion in the received signal is caused by the temporal spreading and the consequent overlapping of individual pulses in the signal.</p>
+<p><strong>Adaptive equalization</strong>&nbsp;is a commonly used technique for combating inter symbol interference. It involves gathering the dispersed symbol energy into its original time interval. Complex digital processing algorithms are used in the equalization process.</p>

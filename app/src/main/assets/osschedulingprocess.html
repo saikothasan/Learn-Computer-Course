@@ -1,0 +1,79 @@
+<h1>Process Scheduling</h1>
+<p><strong>Process Scheduling</strong>&nbsp;is an OS task that schedules processes of different states like ready, waiting, and running.</p>
+<p>Process scheduling allows OS to allocate a time interval of CPU execution for each process. Another important reason for using a process scheduling system is that it keeps the CPU busy all the time. This allows you to get the minimum response time for programs.</p>
+<h2>Process Scheduling Queues</h2>
+<p>Process Scheduling Queues help you to maintain a distinct queue for each and every process states and PCBs. All the process of the same execution state are placed in the same queue. Therefore, whenever the state of a process is modified, its PCB needs to be unlinked from its existing queue, which moves back to the new state queue.</p>
+<p>Three types of operating system queues are:</p>
+<ol>
+<li><strong>Job queue</strong>&nbsp;&ndash; It helps you to store all the processes in the system.</li>
+<li><strong>Ready queue</strong>&nbsp;&ndash; This type of queue helps you to set every process residing in the main memory, which is ready and waiting to execute.</li>
+<li><strong>Device queues</strong>&nbsp;&ndash; It is a process that is blocked because of the absence of an I/O device.</li>
+</ol>
+<h2>Two State Process Model</h2>
+<p>Two-state process models are:</p>
+<ul style="list-style-type: circle;">
+<li>Running</li>
+<li>Not Running</li>
+</ul>
+<h3>Running</h3>
+<p>In the Operating system, whenever a new process is built, it is entered into the system, which should be running.</p>
+<h3>Not Running</h3>
+<p>The process that are not running are kept in a queue, which is waiting for their turn to execute. Each entry in the queue is a point to a specific process.</p>
+<h2>Scheduling Objectives</h2>
+<p>Here, are important objectives of Process scheduling</p>
+<ul style="list-style-type: circle;">
+<li>Maximize the number of interactive users within acceptable response times.</li>
+<li>Achieve a balance between response and utilization.</li>
+<li>Avoid indefinite postponement and enforce priorities.</li>
+<li>It also should give reference to the processes holding the key resources.</li>
+</ul>
+<h2>Type of Process Schedulers</h2>
+<p>A scheduler is a type of system software that allows you to handle process scheduling.</p>
+<p>There are mainly three types of Process Schedulers:</p>
+<ol>
+<li>Long Term</li>
+<li>Short Term</li>
+<li>Medium Term</li>
+</ol>
+<h2>Long Term Scheduler</h2>
+<p>Long term scheduler is also known as a&nbsp;<strong>job scheduler</strong>. This scheduler regulates the program and select process from the queue and loads them into memory for execution. It also regulates the degree of multi-programing.</p>
+<p>However, the main goal of this type of scheduler is to offer a balanced mix of jobs, like Processor, I/O jobs., that allows managing multiprogramming.</p>
+<h2>Medium Term Scheduler</h2>
+<p>Medium-term scheduling is an important part of&nbsp;<strong>swapping</strong>. It enables you to handle the swapped out-processes. In this scheduler, a running process can become suspended, which makes an I/O request.</p>
+<p>A running process can become suspended if it makes an I/O request. A suspended processes can't make any progress towards completion. In order to remove the process from memory and make space for other processes, the suspended process should be moved to secondary storage.</p>
+<h2>Short Term Scheduler</h2>
+<p>Short term scheduling is also known as&nbsp;<strong>CPU scheduler</strong>. The main goal of this scheduler is to boost the system performance according to set criteria. This helps you to select from a group of processes that are ready to execute and allocates CPU to one of them. The dispatcher gives control of the CPU to the process selected by the short term scheduler.</p>
+<h2>What is Context switch?</h2>
+<p>It is a method to store/restore the state or of a CPU in PCB. So that process execution can be resumed from the same point at a later time. The context switching method is important for multitasking OS.</p>
+<h3>Summary:</h3>
+<ul style="list-style-type: circle;">
+<li>
+<p>Process scheduling is an OS task that schedules the processes of different states like ready, waiting, and running.</p>
+</li>
+<li>
+<p>Two-state process models are 1) Running, and )Not Running</p>
+</li>
+<li>
+<p>Process scheduling maximizes the number of interactive users, within acceptable response times.</p>
+</li>
+<li>
+<p>A scheduler is a type of system software that allows you to handle process scheduling.</p>
+</li>
+<li>
+<p>Three types of the scheduler are 1) Long term 2) Short term 3) Medium-term</p>
+</li>
+<li>
+<p>Long term scheduler regulates the program and select process from the queue and loads them into memory for execution.</p>
+</li>
+<li>
+<p>The medium-term scheduler enables you to handle the swapped out-processes.</p>
+</li>
+<li>
+<p>The main goal of short term scheduler is to boost the system performance according to set criteria</p>
+</li>
+<li>
+<p>Long term is also known as a job scheduler, whereas the short term is also known as CPU scheduler, and the medium-term is also called swapping scheduler.</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

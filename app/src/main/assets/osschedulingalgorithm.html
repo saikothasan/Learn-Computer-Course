@@ -1,0 +1,150 @@
+<h1 class="graf--h1">Scheduling Algorithms</h1>
+<p class="graf--p">In a system, there are a number of processes that are present in different states at a particular time. Some processes may be in the waiting state, others may be in the running state and so on. Have you ever thought how CPU selects one process out of some many processes for execution? Yes, you got it right. CPU uses some kind of process scheduling algorithms to select one process for its execution amongst so many processes. The process scheduling algorithms are used to maximize CPU utilization by increasing throughput. In this blog, we will learn about various process scheduling algorithms used by CPU to schedule a process.</p>
+<p class="graf--p">But before starting this topic, if you are not familiar with Burst time, Arrival time, Exit time, Response time, Waiting time, Turnaround time, and Throughput, then you should first learn these topicsn. Also, learn about Preemptive and Non-Preemptive scheduling from here.</p>
+<h2 class="graf--h3">First Come First Serve (FCFS)</h2>
+<p class="graf--p">As the name suggests, the process coming first in the ready state will be executed first by the CPU irrespective of the burst time or the priority. This is implemented by using the&nbsp;<strong class="graf--bold">First In First Out (FIFO)</strong>&nbsp;queue. So, what happens is that, when a process enters into the ready state, then the PCB of that process will be linked to the tail of the queue and the CPU starts executing the processes by taking the process from the head of the queue. If the CPU is allocated to a process then it can't be taken back until it finishes the execution of that process.</p>
+<p class="graf--p"><strong class="graf--bold">Example:</strong></p>
+<div class="graf-image graf-caption"><img class="graf-image" src="https://s3.ap-south-1.amazonaws.com/afteracademy-server-uploads/process-scheduling-algorithms-in-the-operating-system-fcfs-example.png" alt="" width="701" height="325" /></div>
+<p class="graf--p">In the above example, you can see that we have three processes P1, P2, and P3, and they are coming in the ready state at 0ms, 2ms, and 2ms respectively.</p>
+<p class="graf--p">So, based on the arrival time, the process P1 will be executed for the first 18ms.</p>
+<p class="graf--p">After that, the process P2 will be executed for 7ms and finally, the process P3 will be executed for 10ms.</p>
+<p class="graf--p">One thing to be noted here is that if the arrival time of the processes is the same, then the CPU can select any process.</p>
+<pre><code class="language-java graf graf--code hljs">---------------------------------------------
+| Process | Waiting Time | Turnaround Time  |
+---------------------------------------------
+|   P1    |     <span class="hljs-number"><span class="hljs-number">0</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">18</span></span>ms        |
+|   P2    |     <span class="hljs-number"><span class="hljs-number">16</span></span>ms     |      <span class="hljs-number"><span class="hljs-number">23</span></span>ms        |
+|   P3    |     <span class="hljs-number"><span class="hljs-number">23</span></span>ms     |      <span class="hljs-number"><span class="hljs-number">33</span></span>ms        |
+---------------------------------------------
+Total waiting time: (<span class="hljs-number"><span class="hljs-number">0</span></span> + <span class="hljs-number"><span class="hljs-number">16</span></span> + <span class="hljs-number"><span class="hljs-number">23</span></span>) = <span class="hljs-number"><span class="hljs-number">39</span></span>ms
+Average waiting time: (<span class="hljs-number"><span class="hljs-number">39</span></span>/<span class="hljs-number"><span class="hljs-number">3</span></span>) = <span class="hljs-number"><span class="hljs-number">13</span></span>ms
+
+Total turnaround time: (<span class="hljs-number"><span class="hljs-number">18</span></span> + <span class="hljs-number"><span class="hljs-number">23</span></span> + <span class="hljs-number"><span class="hljs-number">33</span></span>) = <span class="hljs-number"><span class="hljs-number">74</span></span>ms
+Average turnaround time: (<span class="hljs-number"><span class="hljs-number">74</span></span>/<span class="hljs-number"><span class="hljs-number">3</span></span>) = <span class="hljs-number"><span class="hljs-number">24.66</span></span>ms<br /><br /></code></pre>
+<h4 class="graf--p"><strong class="graf--bold">Advantages of FCFS:</strong></h4>
+<ul style="list-style-type: circle;">
+<li>It is the most simple scheduling algorithm and is easy to implement.</li>
+</ul>
+<h4 class="graf--p"><strong class="graf--bold">Disadvantages of FCFS:</strong></h4>
+<ul style="list-style-type: circle;">
+<li>This algorithm is non-preemptive so you have to execute the process fully and after that other processes will be allowed to execute.</li>
+<li>Throughput is not efficient.</li>
+<li>FCFS suffers from the&nbsp;<strong class="graf--bold">Convey effect</strong>&nbsp;i.e. if a process is having very high burst time and it is coming first, then it will be executed first irrespective of the fact that a process having very less time is there in the ready state.</li>
+</ul>
+<h2 class="graf--h3">Shortest Job First (Non-preemptive)</h2>
+<p class="graf--p">In the FCFS, we saw if a process is having a very high burst time and it comes first then the other process with a very low burst time have to wait for its turn. So, to remove this problem, we come with a new approach i.e. Shortest Job First or SJF.</p>
+<p class="graf--p">In this technique, the process having the minimum burst time at a particular instant of time will be executed first. It is a non-preemptive approach i.e. if the process starts its execution then it will be fully executed and then some other process will come.</p>
+<p class="graf--p"><strong class="graf--bold">Example:</strong></p>
+<div class="graf-image graf-caption"><img class="graf-image" src="https://s3.ap-south-1.amazonaws.com/afteracademy-server-uploads/process-scheduling-algorithms-in-the-operating-system-sjf-non-preemptive-example.png" alt="" /></div>
+<p class="graf--p">In the above example, at 0ms, we have only one process i.e. process P2, so the process P2 will be executed for 4ms. Now, after 4ms, there are two new processes i.e. process P1 and process P3. The burst time of P1 is 5ms and that of P3 is 2ms. So, amongst these two, the process P3 will be executed first because its burst time is less than P1. P3 will be executed for 2ms. Now, after 6ms, we have two processes with us i.e. P1 and P4 (because we are at 6ms and P4 comes at 5ms). Amongst these two, the process P4 is having a less burst time as compared to P1. So, P4 will be executed for 4ms and after that P1 will be executed for 5ms. So, the waiting time and turnaround time of these processes will be:</p>
+<pre><code class="language-java graf graf--code hljs">---------------------------------------------
+| Process | Waiting Time | Turnaround Time  |
+---------------------------------------------
+|   P1    |     <span class="hljs-number"><span class="hljs-number">7</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">12</span></span>ms        |
+|   P2    |     <span class="hljs-number"><span class="hljs-number">0</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">4</span></span>ms         |
+|   P3    |     <span class="hljs-number"><span class="hljs-number">0</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">2</span></span>ms         |
+|   P4    |     <span class="hljs-number"><span class="hljs-number">1</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">5</span></span>ms         |
+---------------------------------------------
+Total waiting time: (<span class="hljs-number"><span class="hljs-number">7</span></span> + <span class="hljs-number"><span class="hljs-number">0</span></span> + <span class="hljs-number"><span class="hljs-number">0</span></span> + <span class="hljs-number"><span class="hljs-number">1</span></span>) = <span class="hljs-number"><span class="hljs-number">8</span></span>ms
+Average waiting time: (<span class="hljs-number"><span class="hljs-number">8</span></span>/<span class="hljs-number"><span class="hljs-number">4</span></span>) = <span class="hljs-number"><span class="hljs-number">2</span></span>ms
+
+Total turnaround time: (<span class="hljs-number"><span class="hljs-number">12</span></span> + <span class="hljs-number"><span class="hljs-number">4</span></span> + <span class="hljs-number"><span class="hljs-number">2</span></span> + <span class="hljs-number"><span class="hljs-number">5</span></span>) = <span class="hljs-number"><span class="hljs-number">23</span></span>ms
+Average turnaround time: (<span class="hljs-number"><span class="hljs-number">23</span></span>/<span class="hljs-number"><span class="hljs-number">4</span></span>) = <span class="hljs-number"><span class="hljs-number">5.75</span></span>ms</code></pre>
+<h3 class="graf--p"><strong class="graf--bold">Advantages of SJF (non-preemptive):</strong></h3>
+<ul style="list-style-type: circle;">
+<li>Short processes will be executed first.</li>
+</ul>
+<h3 class="graf--p"><strong class="graf--bold">Disadvantages of SJF (non-preemptive):</strong></h3>
+<ul style="list-style-type: circle;">
+<li>It may lead to starvation if only short burst time processes are coming in the ready state.</li>
+</ul>
+<h2 class="graf--h3">Shortest Job First (Preemptive)</h2>
+<p class="graf--p">This is the preemptive approach of the Shortest Job First algorithm. Here, at every instant of time, the CPU will check for some shortest job. For example, at time 0ms, we have P1 as the shortest process. So, P1 will execute for 1ms and then the CPU will check if some other process is shorter than P1 or not. If there is no such process, then P1 will keep on executing for the next 1ms and if there is some process shorter than P1 then that process will be executed. This will continue until the process gets executed.</p>
+<blockquote class="graf--blockquote">This algorithm is also known as Shortest Remaining Time First i.e. we schedule the process based on the shortest remaining time of the processes.</blockquote>
+<p class="graf--p"><strong class="graf--bold">Example:</strong></p>
+<div class="graf-image graf-caption"><img class="graf-image" src="https://s3.ap-south-1.amazonaws.com/afteracademy-server-uploads/process-scheduling-algorithms-in-the-operating-system-sjf-preemptive-example.png" alt="" /></div>
+<p class="graf--p">In the above example, at time 1ms, there are two processes i.e. P1 and P2. Process P1 is having burst time as 6ms and the process P2 is having 8ms. So, P1 will be executed first. Since it is a preemptive approach, so we have to check at every time quantum. At 2ms, we have three processes i.e. P1(5ms remaining), P2(8ms), and P3(7ms). Out of these three, P1 is having the least burst time, so it will continue its execution. After 3ms, we have four processes i.e P1(4ms remaining), P2(8ms), P3(7ms), and P4(3ms). Out of these four, P4 is having the least burst time, so it will be executed. The process P4 keeps on executing for the next three ms because it is having the shortest burst time. After 6ms, we have 3 processes i.e. P1(4ms remaining), P2(8ms), and P3(7ms). So, P1 will be selected and executed. This process of time comparison will continue until we have all the processes executed. So, waiting and turnaround time of the processes will be:</p>
+<pre><code class="language-java graf graf--code hljs">---------------------------------------------
+| Process | Waiting Time | Turnaround Time  |
+---------------------------------------------
+|   P1    |     <span class="hljs-number"><span class="hljs-number">3</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">9</span></span>ms         |
+|   P2    |     <span class="hljs-number"><span class="hljs-number">16</span></span>ms     |      <span class="hljs-number"><span class="hljs-number">24</span></span>ms        |
+|   P3    |     <span class="hljs-number"><span class="hljs-number">8</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">15</span></span>ms        |
+|   P4    |     <span class="hljs-number"><span class="hljs-number">0</span></span>ms      |      <span class="hljs-number"><span class="hljs-number">3</span></span>ms         |
+---------------------------------------------
+Total waiting time: (<span class="hljs-number"><span class="hljs-number">3</span></span> + <span class="hljs-number"><span class="hljs-number">16</span></span> + <span class="hljs-number"><span class="hljs-number">8</span></span> + <span class="hljs-number"><span class="hljs-number">0</span></span>) = <span class="hljs-number"><span class="hljs-number">27</span></span>ms
+Average waiting time: (<span class="hljs-number"><span class="hljs-number">27</span></span>/<span class="hljs-number"><span class="hljs-number">4</span></span>) = <span class="hljs-number"><span class="hljs-number">6.75</span></span>ms
+
+Total turnaround time: (<span class="hljs-number"><span class="hljs-number">9</span></span> + <span class="hljs-number"><span class="hljs-number">24</span></span> + <span class="hljs-number"><span class="hljs-number">15</span></span> + <span class="hljs-number"><span class="hljs-number">3</span></span>) = <span class="hljs-number"><span class="hljs-number">51</span></span>ms
+Average turnaround time: (<span class="hljs-number"><span class="hljs-number">51</span></span>/<span class="hljs-number"><span class="hljs-number">4</span></span>) = <span class="hljs-number"><span class="hljs-number">12.75</span></span>ms</code></pre>
+<p class="graf--p"><strong class="graf--bold">Advantages of SJF (preemptive):</strong></p>
+<ul style="list-style-type: circle;">
+<li>Short processes will be executed first.</li>
+</ul>
+<p class="graf--p"><strong class="graf--bold">Disadvantages of SJF (preemptive):</strong></p>
+<ul style="list-style-type: circle;">
+<li>It may result in starvation if short processes keep on coming.</li>
+</ul>
+<h2 class="graf--h3">Round-Robin</h2>
+<p class="graf--p">In this approach of CPU scheduling, we have a fixed time quantum and the CPU will be allocated to a process for that amount of time only at a time. For example, if we are having three process P1, P2, and P3, and our time quantum is 2ms, then P1 will be given 2ms for its execution, then P2 will be given 2ms, then P3 will be given 2ms. After one cycle, again P1 will be given 2ms, then P2 will be given 2ms and so on until the processes complete its execution.</p>
+<p class="graf--p">It is generally used in the time-sharing environments and there will be no starvation in case of the round-robin.</p>
+<p class="graf--p"><strong class="graf--bold">Example:</strong></p>
+<div class="graf-image graf-caption"><img class="graf-image" src="https://s3.ap-south-1.amazonaws.com/afteracademy-server-uploads/process-scheduling-algorithms-in-the-operating-system-round-robin-example.png" alt="" /></div>
+<p class="graf--p">In the above example, every process will be given 2ms in one turn because we have taken the time quantum to be 2ms. So process P1 will be executed for 2ms, then process P2 will be executed for 2ms, then P3 will be executed for 2 ms. Again process P1 will be executed for 2ms, then P2, and so on. The waiting time and turnaround time of the processes will be:</p>
+<pre><code class="language-java graf graf--code hljs">---------------------------------------------
+| Process | Waiting Time | Turnaround Time  |
+---------------------------------------------
+|   P1    |     <span class="hljs-number"><span class="hljs-number">13</span></span>ms     |      <span class="hljs-number"><span class="hljs-number">23</span></span>ms        |
+|   P2    |     <span class="hljs-number"><span class="hljs-number">10</span></span>ms     |      <span class="hljs-number"><span class="hljs-number">15</span></span>ms        |
+|   P3    |     <span class="hljs-number"><span class="hljs-number">13</span></span>ms     |      <span class="hljs-number"><span class="hljs-number">21</span></span>ms        |
+---------------------------------------------
+Total waiting time: (<span class="hljs-number"><span class="hljs-number">13</span></span> + <span class="hljs-number"><span class="hljs-number">10</span></span> + <span class="hljs-number"><span class="hljs-number">13</span></span>) = <span class="hljs-number"><span class="hljs-number">36</span></span>ms
+Average waiting time: (<span class="hljs-number"><span class="hljs-number">36</span></span>/<span class="hljs-number"><span class="hljs-number">3</span></span>) = <span class="hljs-number"><span class="hljs-number">12</span></span>ms
+
+Total turnaround time: (<span class="hljs-number"><span class="hljs-number">23</span></span> + <span class="hljs-number"><span class="hljs-number">15</span></span> + <span class="hljs-number"><span class="hljs-number">21</span></span>) = <span class="hljs-number"><span class="hljs-number">59</span></span>ms
+Average turnaround time: (<span class="hljs-number"><span class="hljs-number">59</span></span>/<span class="hljs-number"><span class="hljs-number">3</span></span>) = <span class="hljs-number"><span class="hljs-number">19.66</span></span>ms</code></pre>
+<h3 class="graf--p"><strong class="graf--bold">Advantages of round-robin:</strong></h3>
+<ul style="list-style-type: circle;">
+<li>No starvation will be there in round-robin because every process will get chance for its execution.</li>
+<li>Used in time-sharing systems.</li>
+</ul>
+<h3 class="graf--p"><strong class="graf--bold">Disadvantages of round-robin:</strong></h3>
+<ul style="list-style-type: circle;">
+<li>We have to perform a lot of context switching here, which will keep the CPU idle.</li>
+</ul>
+<h2 class="graf--h3">Priority Scheduling (Non-preemptive)</h2>
+<p class="graf--p">In this approach, we have a priority number associated with each process and based on that priority number the CPU selects one process from a list of processes. The priority number can be anything. It is just used to identify which process is having a higher priority and which process is having a lower priority. For example, you can denote 0 as the highest priority process and 100 as the lowest priority process. Also, the reverse can be true i.e. you can denote 100 as the highest priority and 0 as the lowest priority.</p>
+<p class="graf--p"><strong class="graf--bold">Example:</strong></p>
+<div class="graf-image graf-caption"><img class="graf-image" src="https://s3.ap-south-1.amazonaws.com/afteracademy-server-uploads/process-scheduling-algorithms-in-the-operating-system-priority-example.png" alt="" /></div>
+<p class="graf--p">In the above example, at 0ms, we have only one process P1. So P1 will execute for 5ms because we are using non-preemption technique here. After 5ms, there are three processes in the ready state i.e. process P2, process P3, and process P4. Out to these three processes, the process P4 is having the highest priority so it will be executed for 6ms and after that, process P2 will be executed for 3ms followed by the process P1. The waiting and turnaround time of processes will be:</p>
+<pre><code class="language-java graf graf--code hljs">---------------------------------------------
+| Process | Waiting Time | Turnaround Time  |
+---------------------------------------------
+|   P1    |     <span class="hljs-number"><span class="hljs-number">0</span></span>ms      |       <span class="hljs-number"><span class="hljs-number">5</span></span>ms        |
+|   P2    |     <span class="hljs-number"><span class="hljs-number">10</span></span>ms     |       <span class="hljs-number"><span class="hljs-number">13</span></span>ms       |
+|   P3    |     <span class="hljs-number"><span class="hljs-number">12</span></span>ms     |       <span class="hljs-number"><span class="hljs-number">20</span></span>ms       |
+|   P4    |     <span class="hljs-number"><span class="hljs-number">2</span></span>ms      |       <span class="hljs-number"><span class="hljs-number">8</span></span>ms        |
+---------------------------------------------
+Total waiting time: (<span class="hljs-number"><span class="hljs-number">0</span></span> + <span class="hljs-number"><span class="hljs-number">10</span></span> + <span class="hljs-number"><span class="hljs-number">12</span></span> + <span class="hljs-number"><span class="hljs-number">2</span></span>) = <span class="hljs-number"><span class="hljs-number">24</span></span>ms
+Average waiting time: (<span class="hljs-number"><span class="hljs-number">24</span></span>/<span class="hljs-number"><span class="hljs-number">4</span></span>) = <span class="hljs-number"><span class="hljs-number">6</span></span>ms
+
+Total turnaround time: (<span class="hljs-number"><span class="hljs-number">5</span></span> + <span class="hljs-number"><span class="hljs-number">13</span></span> + <span class="hljs-number"><span class="hljs-number">20</span></span> + <span class="hljs-number"><span class="hljs-number">8</span></span>) = <span class="hljs-number"><span class="hljs-number">46</span></span>ms
+Average turnaround time: (<span class="hljs-number"><span class="hljs-number">46</span></span>/<span class="hljs-number"><span class="hljs-number">4</span></span>) = <span class="hljs-number"><span class="hljs-number">11.5</span></span>ms</code></pre>
+<h3 class="graf--p"><strong class="graf--bold">Advantages of priority scheduling (non-preemptive):</strong></h3>
+<ul style="list-style-type: circle;">
+<li>Higher priority processes like system processes are executed first.</li>
+</ul>
+<h3 class="graf--p"><strong class="graf--bold">Disadvantages of priority scheduling (non-preemptive):</strong></h3>
+<ul style="list-style-type: circle;">
+<li>It can lead to starvation if only higher priority process comes into the ready state.</li>
+<li>If the priorities of more two processes are the same, then we have to use some other scheduling algorithm.</li>
+</ul>
+<h2 class="graf--h3">Multilevel Queue Scheduling</h2>
+<p class="graf--p">In multilevel queue scheduling, we divide the whole processes into some batches or queues and then each queue is given some priority number. For example, if there are four processes P1, P2, P3, and P4, then we can put process P1 and P4 in queue1 and process P2 and P3 in queue2. Now, we can assign some priority to each queue. So, we can take the queue1 as having the highest priority and queue2 as the lowest priority. So, all the processes of the queue1 will be executed first followed by queue2. Inside the queue1, we can apply some other scheduling algorithm for the execution of processes of queue1. Similar is with the case of queue2.</p>
+<p class="graf--p">So, multiple queues for processes are maintained that are having common characteristics and each queue has its own priority and there is some scheduling algorithm used in each of the queues.</p>
+<p class="graf--p"><strong class="graf--bold">Example:</strong></p>
+<div class="graf-image graf-caption"><img class="graf-image" src="https://s3.ap-south-1.amazonaws.com/afteracademy-server-uploads/process-scheduling-algorithms-in-the-operating-system-multilevel-queue-example.png" alt="" /></div>
+<p class="graf--p">In the above example, we have two queues i.e. queue1 and queue2. Queue1 is having higher priority and queue1 is using the FCFS approach and queue2 is using the round-robin approach(time quantum = 2ms).</p>
+<p class="graf--p">Since the priority of queue1 is higher, so queue1 will be executed first. In the queue1, we have two processes i.e. P1 and P4 and we are using FCFS. So, P1 will be executed followed by P4. Now, the job of the queue1 is finished. After this, the execution of the processes of queue2 will be started by using the round-robin approach.</p>
+<p>&nbsp;</p>
+<pre><code class="language-java graf graf--code hljs">&nbsp;</code></pre>

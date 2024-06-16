@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon200"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.LearnComputerCourse">
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+        <activity
+            android:name="com.demo.learncomputercourse.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_Excel_Advance" />
+        <activity android:name="com.demo.learncomputercourse.ExcelAdvanceActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_Excel_Formula" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_Excel_Format_Sheet" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_Excel_Formatting_Cell" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_Excel_Edit_Worksheet" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_Excel_Basic" />
+        <activity android:name="com.demo.learncomputercourse.ExcelFormulaActivity" />
+        <activity android:name="com.demo.learncomputercourse.ExcelFormatsheetActivity" />
+        <activity android:name="com.demo.learncomputercourse.ExcelFormatcellActivity" />
+        <activity android:name="com.demo.learncomputercourse.ExcelEditingWorksheetActivity" />
+        <activity android:name="com.demo.learncomputercourse.ExcelBasicActivity" />
+        <activity android:name="com.demo.learncomputercourse.MicrosoftExcelActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_powerpoint_SharingPresentation" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_powerpoint_WorkingMultimedia" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_powerpoint_formattingPresentation" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_powerpoint_editingpresentation" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_powerpoint_basic" />
+        <activity android:name="com.demo.learncomputercourse.MS_Powerpoint_SharingPresentation_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Powerpoint_WorkingMultimedia_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Powerpoint_FormattingPresentation_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Powerpoint_EditingPresentation_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Powerpoint_BasicActivity" />
+        <activity android:name="com.demo.learncomputercourse.MicrosoftPowerpointActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_WORD_AdvancedOperations" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_WORD_WORKINGTABLES" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_WORD_FORMATPAGES" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_WORD_FORMATTEXT" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_WORD_EDITDOCUMENTS" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_MS_WORD_BASIC" />
+        <activity android:name="com.demo.learncomputercourse.MS_Word_AdvancedOperation_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Word_workingtables_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Word_formattongPages_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Word_FormattingText_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Word_EditDocuments_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MS_Word_Basic_Activity" />
+        <activity android:name="com.demo.learncomputercourse.MicrosoftWordActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_shortcut_key" />
+        <activity android:name="com.demo.learncomputercourse.ShortcutActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_wireless" />
+        <activity android:name="com.demo.learncomputercourse.WirelessCommunicationActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_organization" />
+        <activity android:name="com.demo.learncomputercourse.OrganizationActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_computer_security" />
+        <activity android:name="com.demo.learncomputercourse.ComputerSecurityActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_networksecurity" />
+        <activity android:name="com.demo.learncomputercourse.NetworkSecurityActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_application" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_transport" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_network" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_data" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_physical" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_dcn" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity_application" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity_transport" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity_network" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity_data" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity_physical" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity_DCN" />
+        <activity android:name="com.demo.learncomputercourse.ComputerNetworkingActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_operating_system" />
+        <activity android:name="com.demo.learncomputercourse.OperatingSystemActivity" />
+        <activity android:name="com.demo.learncomputercourse.receiving_activity_computerscience" />
+        <activity
+            android:name="com.demo.learncomputercourse.receiving_activity_basic"
+            android:label="Basics" />
+        <activity
+            android:name="com.demo.learncomputercourse.receiving_activity_fundamental"
+            android:label="Computer Fundamentals" />
+        <activity android:name="com.demo.learncomputercourse.ComputerScienceActivity" />
+        <activity
+            android:name="com.demo.learncomputercourse.BasicActivity"
+            android:label="Basics" />
+        <activity
+            android:name="com.demo.learncomputercourse.FundamentalActivity"
+            android:label="Computer Fundamentals" />
+        <activity
+            android:name="com.demo.learncomputercourse.MainActivity"
+            android:label="Computer Course" />
+
+
+    </application>
+
+</manifest>

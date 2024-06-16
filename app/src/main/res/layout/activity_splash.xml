@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#4050a2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_sp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/sp_fro"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:gravity="center_horizontal"
+        android:background="#fff"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Learn Computer"
+        android:layout_below="@+id/img_sp"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        android:id="@+id/progressWheel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="90dp"
+        android:progress="100"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/progress"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        style="?android:attr/progressBarStyleHorizontal" />
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<h1>Threads</h1>
+<p><strong>Thread</strong>&nbsp;is an execution unit which consists of its own program counter, a stack, and a set of registers. Threads are also known as Lightweight processes. Threads are popular way to improve application through parallelism. The CPU switches rapidly back and forth among the threads giving illusion that the threads are running in parallel.</p>
+<p>As each thread has its own independent resource for process execution, multpile processes can be executed parallely by increasing number of threads.</p>
+<h2>Types of Thread</h2>
+<p>There are two types of threads:</p>
+<ol class="content">
+<li>User Threads</li>
+<li>Kernel Threads</li>
+</ol>
+<p><strong>User threads</strong>, are above the kernel and without kernel support. These are the threads that application programmers use in their programs.</p>
+<p><strong>Kernel threads</strong>&nbsp;are supported within the kernel of the OS itself. All modern OSs support kernel level threads, allowing the kernel to perform multiple simultaneous tasks and/or to service multiple kernel system calls simultaneously.</p>
+<h2>Multithreading Models</h2>
+<p>The user threads must be mapped to kernel threads, by one of the following strategies:</p>
+<ul class="content" style="list-style-type: circle;">
+<li>
+<p>Many to One Model</p>
+</li>
+<li>
+<p>One to One Model</p>
+</li>
+<li>
+<p>Many to Many Model</p>
+</li>
+</ul>
+<h3>Many to One Model</h3>
+<ul class="content" style="list-style-type: circle;">
+<li>
+<p>In the&nbsp;<strong>many to one</strong>&nbsp;model, many user-level threads are all mapped onto a single kernel thread.</p>
+</li>
+<li>
+<p>Thread management is handled by the thread library in user space, which is efficient in nature.</p>
+</li>
+</ul>
+<h3>One to One Model</h3>
+<ul class="content" style="list-style-type: circle;">
+<li>
+<p>The&nbsp;<strong>one to one</strong>&nbsp;model creates a separate kernel thread to handle each and every user thread.</p>
+</li>
+<li>
+<p>Most implementations of this model place a limit on how many threads can be created.</p>
+</li>
+<li>
+<p>Linux and Windows from 95 to XP implement the one-to-one model for threads.</p>
+</li>
+</ul>
+<h3>Many to Many Model</h3>
+<ul style="list-style-type: circle;">
+<li>
+<p>The&nbsp;<strong>many to many</strong>&nbsp;model multiplexes any number of user threads onto an equal or smaller number of kernel threads, combining the best features of the one-to-one and many-to-one models.</p>
+</li>
+<li>
+<p>Users can create any number of the threads.</p>
+</li>
+<li>
+<p>Blocking the kernel system calls does not block the entire process.</p>
+</li>
+<li>
+<p>Processes can be split across multiple processors.</p>
+</li>
+</ul>
+<h2>What are Thread Libraries?</h2>
+<p>Thread libraries provide programmers with API for creation and management of threads.</p>
+<p>Thread libraries may be implemented either in user space or in kernel space. The user space involves API functions implemented solely within the user space, with no kernel support. The kernel space involves system calls, and requires a kernel with thread library support.</p>
+<h3>Three types of Thread</h3>
+<ol class="content">
+<li>
+<p><strong>POSIX Pitheads</strong>, may be provided as either a user or kernel library, as an extension to the POSIX standard.</p>
+</li>
+<li>
+<p><strong>Win32 threads</strong>, are provided as a kernel-level library on Windows systems.</p>
+</li>
+<li>
+<p><strong>Java threads</strong>: Since Java generally runs on a Java Virtual Machine, the implementation of threads is based upon whatever OS and hardware the JVM is running on, i.e. either Pitheads or Win32 threads depending on the system.</p>
+</li>
+</ol>
+<h2>Benefits of Multithreading</h2>
+<ul class="content" style="list-style-type: circle;">
+<li>
+<p>Responsiveness</p>
+</li>
+<li>
+<p>Resource sharing, hence allowing better utilization of resources.</p>
+</li>
+<li>
+<p>Economy. Creating and managing threads becomes easier.</p>
+</li>
+<li>
+<p>Scalability. One thread runs on one CPU. In Multithreaded processes, threads can be distributed over a series of processors to scale.</p>
+</li>
+<li>
+<p>Context Switching is smooth. Context switching refers to the procedure followed by CPU to change from one task to another.</p>
+</li>
+</ul>
+<h2>Multithreading Issues</h2>
+<p>Below we have mentioned a few issues related to multithreading. Well, it's an old saying,&nbsp;<em>All good things, come at a price.</em></p>
+<h4>Thread Cancellation</h4>
+<p>Thread cancellation means terminating a thread before it has finished working. There can be two approaches for this, one is&nbsp;<strong>Asynchronous cancellation</strong>, which terminates the target thread immediately. The other is&nbsp;<strong>Deferred cancellation</strong>&nbsp;allows the target thread to periodically check if it should be cancelled.</p>
+<h4>Signal Handling</h4>
+<p>Signals are used in UNIX systems to notify a process that a particular event has occurred. Now in when a Multithreaded process receives a signal, to which thread it must be delivered? It can be delivered to all, or a single thread.</p>
+<h4>fork() System Call</h4>
+<p>fork() is a system call executed in the kernel through which a process creates a copy of itself. Now the problem in Multithreaded process is, if one thread forks, will the entire process be copied or not?</p>
+<h4>Security Issues</h4>
+<p>Yes, there can be security issues because of extensive sharing of resources between multiple threads.</p>
+<p>There are many other issues that you might face in a multithreaded process, but there are appropriate solutions available for them. Pointing out some issues here was just to study both sides of the coin.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

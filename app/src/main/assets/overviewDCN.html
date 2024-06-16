@@ -1,0 +1,13 @@
+<h1 class="idp-ltr-html-topictitle2">Overview of DCN</h1>
+<h2 class="idp-ltr-html-sectiontitle">Definition</h2>
+<p id="feature_0003992185__dcn_define1">The data communication network (DCN) refers to the network on which network elements (NEs) exchange Operation, Administration and Maintenance (OAM) information with the network management system (NMS). It is constructed for communication between managing and managed devices.</p>
+<div class="idp-ltr-html-p">A DCN can be an external or internal DCN.</div>
+<div class="idp-ltr-html-p">
+<h2 class="idp-ltr-html-sectiontitle">Purpose</h2>
+<p>When constructing a large network, hardware engineers must install devices on site, and software commissioning engineers must configure the devices also on site. This network construction method requires significant human and material resources, causing high capital expenditure (CAPEX) and operational expenditure (OPEX). If a new NE is deployed but the NMS cannot detect the NE, the network administrator cannot manage or control the NE. Plug-and-play can be used so that the NMS can automatically detect new NEs and remotely commission the NEs to reduce CAPEX and OPEX.</p>
+<p id="feature_0003992185__dcn_define2">The DCN technique offers a mechanism to implement plug-and-play. After an NE is installed and started, an IP address (NEIP address) mapped to the NEID of the NE is automatically generated. Each NE adds its NEID and NEIP address to a link state advertisement (LSA). Then, Open Shortest Path First (OSPF) advertises all Type-10 LSAs to construct a core routing table that contains mappings between NEIP addresses and NEIDs on each NE. After detecting a new NE, the GNE reports the NE to the NMS. The NMS accesses the NE using the IP address of the GNE and ID of the NE. To commission NEs, the NMS can use the GNE to remotely manage the NEs on the network.</p>
+<h2>Objectives of DCN</h2>
+<p>The main&nbsp;<strong>objective</strong>&nbsp;of data communication and networking is to enable seamless exchange of data between any two points in the world. This exchange of data takes place over a computer network. Data refers to the raw facts that are collected while information refers to processed data that enables us to take decisions.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>

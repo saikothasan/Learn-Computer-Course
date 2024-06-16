@@ -1,0 +1,58 @@
+<h1>Propagation Losses</h1>
+<p>Antenna and Wave propagation plays a vital role in wireless communication networks. An antenna is an electrical conductor or a system of conductors that radiates/collects (transmits or receives) electromagnetic energy into/from space. An idealized isotropic antenna radiates equally in all directions.</p>
+<h2>Propagation Mechanisms</h2>
+<p>Wireless transmissions propagate in three modes. They are &minus;</p>
+<ul class="list">
+<li>Ground-wave propagation</li>
+<li>Sky-wave propagation</li>
+<li>Line-of-sight propagation</li>
+</ul>
+<p><strong>Ground wave propagation</strong>&nbsp;follows the contour of the earth, while&nbsp;<strong>sky wave propagation</strong>&nbsp;uses reflection by both earth and ionosphere.</p>
+<p><strong>Line of sight propagation</strong>&nbsp;requires the transmitting and receiving antennas to be within the line of sight of each other. Depending upon the frequency of the underlying signal, the particular mode of propagation is followed.</p>
+<p>Examples of ground wave and sky wave communication are&nbsp;<strong>AM radio</strong>&nbsp;and&nbsp;<strong>international broadcasts</strong>&nbsp;such as BBC. Above 30 MHz, neither ground wave nor sky wave propagation operates and the communication is through line of sight.</p>
+<h2>Transmission Limitations</h2>
+<p>In this section, we will discuss the various limitations that affect electromagnetic wave transmissions. Let us start with attenuation.</p>
+<h3>Attenuation</h3>
+<p>The strength of signal falls with distance over transmission medium. The extent of attenuation is a function of distance, transmission medium, as well as the frequency of the underlying transmission.</p>
+<h3>Distortion</h3>
+<p>Since signals at different frequencies attenuate to different extents, a signal comprising of components over a range of frequencies gets distorted, i.e., the shape of the received signal changes.</p>
+<p>A standard method of resolving this problem (and recovering the original shape) is to amplify higher frequencies and thus equalize attenuation over a band of frequencies.</p>
+<h3>Dispersion</h3>
+<p>Dispersion is the phenomenon of spreading of a burst of electromagnetic energy during propagation. Bursts of data sent in rapid succession tend to merge due to dispersion.</p>
+<h3>Noise</h3>
+<p>The most pervasive form of noise is thermal noise, which is often modeled using an additive Gaussian model. Thermal noise is due to thermal agitation of electrons and is uniformly distributed across the frequency spectrum.</p>
+<p>Other forms of noise include &minus;</p>
+<ul class="list">
+<li>
+<p><strong>Inter modulation noise</strong>&nbsp;(caused by signals produced at frequencies that are sums or differences of carrier frequencies)</p>
+</li>
+<li>
+<p><strong>Crosstalk</strong>&nbsp;(interference between two signals)</p>
+</li>
+<li>
+<p><strong>Impulse noise</strong>&nbsp;(irregular pulses of high energy caused by external electromagnetic disturbances).</p>
+</li>
+</ul>
+<p>While an impulse noise may not have a significant impact on analog data, it has a noticeable effect on digital data, causing&nbsp;<strong>burst errors</strong>.</p>
+<h3>Fading</h3>
+<p>Fading refers to the variation of the signal strength with respect to time/distance and is widely prevalent in wireless transmissions. The most common causes of fading in the wireless environment are multipath propagation and mobility (of objects as well as the communicating devices).</p>
+<h3>Multipath propagation</h3>
+<p>In wireless media, signals propagate using three principles, which are reflection, scattering, and diffraction.</p>
+<ul class="list">
+<li>
+<p><strong>Reflection</strong>&nbsp;occurs when the signal encounters a large solid surface, whose size is much larger than the wavelength of the signal, e.g., a solid wall.</p>
+</li>
+<li>
+<p><strong>Diffraction</strong>&nbsp;occurs when the signal encounters an edge or a corner, whose size is larger than the wavelength of the signal, e.g., an edge of a wall.</p>
+</li>
+<li>
+<p><strong>Scattering</strong>&nbsp;occurs when the signal encounters small objects of size smaller than the wavelength of the signal.</p>
+</li>
+</ul>
+<p>One consequence of multipath propagation is that multiple copies of a signal propagation along multiple different paths, arrive at any point at different times. So the signal received at a point is not only affected by the&nbsp;<strong>inherent noise, distortion, attenuation</strong>, and&nbsp;<strong>dispersion</strong>&nbsp;in the channel but also the&nbsp;<strong>interaction of signals</strong>&nbsp;propagated along multiple paths.</p>
+<h3>Delay spread</h3>
+<p>Suppose we transmit a probing pulse from a location and measure the received signal at the recipient location as a function of time. The signal power of the received signal spreads over time due to multipath propagation.</p>
+<p>The delay spread is determined by the density function of the resulting spread of the delay over time.&nbsp;<strong>Average delay spread</strong>&nbsp;and&nbsp;<strong>root mean square delay spread</strong>&nbsp;are the two parameters that can be calculated.</p>
+<h3>Doppler spread</h3>
+<p>This is a measure of&nbsp;<strong>spectral broadening</strong>&nbsp;caused by the rate of change of the mobile radio channel. It is caused by either relative motion between the mobile and base station or by the movement of objects in the channel.</p>
+<p>When the velocity of the mobile is high, the Doppler spread is high, and the resulting channel variations are faster than that of the baseband signal, this is referred to as&nbsp;<strong>fast fading</strong>. When channel variations are slower than the baseband signal variations, then the resulting fading is referred to as&nbsp;<strong>slow fading</strong>.</p>

@@ -1,0 +1,51 @@
+<h1>Protocols in Application Layer</h1>
+<h2>Application Layer:-</h2>
+<p>The application layer is present at the top of the OSI model. It is the layer through which users interact. It provides services to the user.</p>
+<h2>Application Layer protocol:-</h2>
+<h3>1. TELNET:</h3>
+<p>Telnet stands for the&nbsp;<strong>TEL</strong>ecomunications&nbsp;<strong>NET</strong>work. It helps in terminal emulation. It allows Telnet client to access the resources of the Telnet server. It is used for managing the files on the internet. It is used for initial set up of devices like switches. The telnet command is a command that uses the Telnet protocol to communicate with a remote device or system. Port number of telnet is 23.<br /><strong>Command</strong></p>
+<pre>telnet [\\RemoteServer]
+\\RemoteServer   : Specifies the name of the server to which you want to connect<br /><br /></pre>
+<h3>2. FTP:</h3>
+<p>FTP stands for file transfer protocol. It is the protocol that actually lets us transfer files.It can facilitate this between any two machines using it. But FTP is not just a protocol but it is also a program.FTP promotes sharing of files via remote computers with reliable and efficient data transfer. Port number for FTP is 20 for data and 21 for control.</p>
+<p><strong>Command</strong></p>
+<pre>ftp machinename<br /><br /></pre>
+<h3>3. TFTP:</h3>
+<p>The Trivial File Transfer Protocol (TFTP) is the stripped-down, stock version of FTP, but it&rsquo;s the protocol of choice if you know exactly what you want and where to find it. It&rsquo;s a technology for transferring files between network devices and is a simplified version of FTP</p>
+<p><strong>Command</strong></p>
+<pre>tftp [ options... ] [host [port]] [-c command]<br />
+</pre>
+<h3>4. NFS:</h3>
+<p>It stands for network file system.It allows remote hosts to mount file systems over a network and interact with those file systems as though they are mounted locally. This enables system administrators to consolidate resources onto centralized servers on the network.</p>
+<p><strong>Command</strong></p>
+<pre>service nfs start<br />
+</pre>
+<h3>5. SMTP:</h3>
+<p>It stands for Simple Mail Transfer Protocol. It is a part of the TCP/IP protocol. Using a process called &ldquo;store and forward,&rdquo; SMTP moves your email on and across networks. It works closely with something called the Mail Transfer Agent (MTA) to send your communication to the right computer and email inbox. Port number for SMTP is 25.</p>
+<p><strong>Command</strong></p>
+<pre>MAIL FROM:&lt;mail@abc.com?<br />
+</pre>
+<h3>6. LPD:</h3>
+<p>It stands for Line Printer Daemon.It is designed for printer sharing.It is the part that receives and processes the request. A &ldquo;daemon&rdquo; is a server or agent.</p>
+<p><strong>Command</strong></p>
+<pre>lpd [ -d ] [ -l ] [ -D DebugOutputFile]<br />
+</pre>
+<h3>7. X window:</h3>
+<p>It defines a protocol for the writing of graphical user interface&ndash;based client/server applications. The idea is to allow a program, called a client, to run on one computer. It is primarily used in networks of interconnected mainframes.</p>
+<p><strong>Command</strong></p>
+<pre>Run xdm in runlevel 5<br />
+</pre>
+<h3>8. SNMP:</h3>
+<p>It stands for Simple Network Management Protocol. It gathers data by polling the devices on<br />the network from a management station at fixed or random intervals, requiring<br />them to disclose certain information. It is a way that servers can share information about their current state, and also a channel through which an administrate can modify pre-defined values. Port number of SNMP is 161(TCP) and 162(UDP).<br /><strong>Command</strong></p>
+<pre>snmpget -mALL -v1 -cpublic snmp_agent_Ip_address sysName.0<br />
+</pre>
+<h3>9. DNS:</h3>
+<p>It stands for Domain Name System. Every time you use a domain name, therefore, a DNS service must translate the name into the corresponding IP address. For example, the domain name www.abc.com might translate to 198.105.232.4.<br />Port number for DNS is 53.<br /><strong>Command</strong></p>
+<pre>ipconfig /flushdns<br />
+</pre>
+<h3>10. DHCP:</h3>
+<p>It stands for Dynamic Host Configuration Protocol (DHCP).It gives IP addresses to hosts.There is a lot of information a DHCP server can provide to a host when the host is registering for an IP address with the DHCP server. Port number for DHCP is 67, 68.</p>
+<p><strong>Command</strong></p>
+<pre>clear ip dhcp binding {address | * }<br /><br /></pre>
+<pre><br /><br /><br /></pre>
+<p>&nbsp;</p>

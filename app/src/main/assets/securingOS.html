@@ -1,0 +1,134 @@
+<h1 class="abstract"><span class="shortdesc">Securing OS</span></h1>
+<div class="abstract"><span class="shortdesc">The operating system is the physical environment where your application runs. Any vulnerability in the operating system could compromise the security of the application. By securing the operating system, you make the environment stable, control access to resources, and control external access to the environment.</span></div>
+<p class="p">The physical security of the system is essential. Threats can come through the Web, but they can also come from a physical terminal. Even if the Web access is very secure, if an attacker obtains physical access to a server, breaking into a system is much easier.</p>
+<p class="p">Review security policies and recommendations for your operating system. Consider implementing the following security best practices.</p>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">User Accounts</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Limit the number of user accounts on the server computers.
+<p class="p">Unnecessary and legacy user accounts increase system complexity and may present system vulnerabilities.</p>
+<p class="p">Fewer user accounts reduces the amount of time administrators spend on account administration.</p>
+</li>
+<li class="li">Ensure that only a few trusted users have administrative access to the server computers.
+<p class="p">Fewer administrators make it easier to maintain accountability. The administrators must be competent.</p>
+</li>
+<li class="li">Assign the minimum required access permissions for the account that runs the application.
+<p class="p">If attackers obtain access to the application, they have the permissions of the user who runs the application.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">Account Policies</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Develop and administer password policies that promote operating system security.
+<p class="p">Examples of such policies are the strong password rule and the password change schedule.</p>
+</li>
+<li class="li">Test the strength of users' passwords by breaking the passwords.
+<p class="p">The users who do not comply with the strong password rule receive a notification to update their passwords according to the organization password policy.</p>
+<p class="p">Software is available to help you with this task.</p>
+</li>
+<li class="li">On a UNIX operating system, activate the shadow password file.
+<p class="p">On UNIX, passwords are stored in the /etc/passwd file. This file is open to everyone, which presents a security risk. To enhance password security, activate the shadow password file named /etc/shadow. If this file is available, passwords are stored in it instead of the passwd file. Because permissions for the /etc/shadow file are more restrictive, the security risk is lower.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">File System</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Grant the users read-only permissions for required directories.
+<p class="p">If attackers obtain access to an application, they have the user permissions.</p>
+</li>
+<li class="li">Deny access by default.
+<p class="p">Access to resources is denied for everyone except for the users to whom access is granted explicitly.</p>
+<p class="p">You can deny read and write permissions for all directory structures for all users. Only users to whom these permissions are granted explicitly have access to the directories and files. This policy also protects any resources that were overlooked by an administrator.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">Network Services</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Provide the minimum number of required services on the server computer.
+<p class="p">Use only the services that you need to run the application. Each service is a potential entry point for a malicious attack. Reducing the number of running services also makes your system more manageable.</p>
+<p class="p">For example, you may not need the ftp, rlogin, or ssh services.</p>
+</li>
+<li class="li">Reduce the level of access permissions for the network services users.
+<p class="p">Network services are exposed to the public.</p>
+</li>
+<li class="li">Ensure that the user accounts that have access to the Web server do not have access to the shell functions.</li>
+<li class="li">Ensure that unused services do not exist in the rc files, rc0 through to rc6, in the /etc directory on UNIX and Linux operating systems.</li>
+<li class="li">Ensure that unused services are not running, and that they do not start automatically on Microsoft Windows operating systems.</li>
+<li class="li">Ensure that required services are running on UNIX.
+<p class="p">You can use the ps and netstat utilities to see the running services. The ps utility gives a list of processes currently running on the computer. The netstat utility provides a list of ports that are currently in use.</p>
+</li>
+<li class="li">Reduce the number of trusted ports specified in the /etc/services file.
+<p class="p">Delete or comment out the ports that you do not plan to use to eliminate possible entry points to the system.</p>
+</li>
+<li class="li">Protect your system against NetBIOS threats associated with ports 137, 138, and 139.
+<p class="p">These ports are listed in the /etc/services file.</p>
+</li>
+<li class="li">Use wrapper services, such as iptables.</li>
+<li class="li">Ensure that the services are current by checking often for security updates.</li>
+<li class="li">Avoid using services that have a graphical user interface (GUI), if possible.
+<p class="p">Such services introduce many known security vulnerabilities.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">System Patches</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Run the latest, vendor-recommended patches for the operating system.
+<p class="p">The patches may be core OS patches, or patches required by additional applications.</p>
+</li>
+<li class="li">Schedule regular maintenance of security patches.</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">Operating System Minimization</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Remove nonessential applications to reduce possible system vulnerabilities.</li>
+<li class="li">Restrict local services to the services required for operation.</li>
+<li class="li">Implement protection for buffer overflow.
+<p class="p">You may need third-party software to do this.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">Logging and Monitoring</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Log security-related events, including successful and failed logons, logoffs, and changes to user permissions.</li>
+<li class="li">Monitor system log files.</li>
+<li class="li">Use a time server to correlate time for forensics.</li>
+<li class="li">Secure the system log files by restricting access permissions to them.
+<p class="p">Logs are important for daily maintenance and as a disaster recovery tool. Therefore, they must be protected from system failures and user tampering.</p>
+</li>
+<li class="li">Use IPF logging to build a more sophisticated logging system.
+<p class="p">To increase the security of the log file system, you can</p>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">place all log files in one location, on one server
+<p class="p">This simplifies the administration of log files.</p>
+</li>
+<li class="li">set up multiple logging servers for redundancy</li>
+<li class="li">use a remote server for logging
+<p class="p">This protects the logs if the system is compromised and, for example, the hard drive is destroyed.</p>
+<p class="p">Because an IPF server is accessed through the network, it can be located anywhere in the world.</p>
+</li>
+</ul>
+</li>
+<li class="li">Secure the logging configuration file.
+<p class="p">The configuration file contains settings that, if changed, can compromise the reliability of the log system. For example, setting the log level incorrectly may cause some failures not to be logged.</p>
+</li>
+<li class="li">Enable logging of access requests on the Web server.
+<p class="p">This can be useful in identifying malicious activity.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2 class="title sectiontitle ibm-h3 ibm-padding-top-1">System Integrity</h2>
+<ul class="ul ibm-colored-list ibm-textcolor-gray-80">
+<li class="li">Build production systems from a known and repeatable process to ensure the system integrity.</li>
+<li class="li">Check systems periodically against snapshots of the original system.</li>
+<li class="li">Use available third-party auditing software to check the system integrity.</li>
+<li class="li">Back up the system resources on a regular basis.</li>
+</ul>
+<p>&nbsp;</p>
+</div>

@@ -1,0 +1,91 @@
+<h1 class="h1">UDP Protocol</h1>
+<p>In computer networking, the UDP stands for User Datagram Protocol. The David P. Reed developed the UDP protocol in 1980. It is defined in RFC 768, and it is a part of the TCP/IP&nbsp;protocol, so it is a standard protocol over the internet. The UDP protocol allows the computer applications to send the messages in the form of datagrams from one machine to another machine over the Internet Protocol(IP)&nbsp;network. The UDP is an alternative communication protocol to the TCP protocol (transmission control protocol). Like TCP, UDP provides a set of rules that governs how the data should be exchanged over the internet. The UDP works by encapsulating the data into the packet and providing its own header information to the packet. Then, this UDP packet is encapsulated to the IP packet and sent off to its destination. Both the TCP and UDP&nbsp;protocols send the data over the internet protocol network, so it is also known as TCP/IP&nbsp;and UDP/IP. There are many differences between these two protocols. UDP enables the process to process communication, whereas the TCP provides host to host communication. Since UDP sends the messages in the form of datagrams, it is considered the best-effort mode of communication. TCP&nbsp;sends the individual packets, so it is a reliable transport medium. Another difference is that the TCP is a connection-oriented protocol whereas, the UDP is a connectionless protocol as it does not require any virtual circuit to transfer the data.</p>
+<p>UDP also provides a different port number to distinguish different user requests and also provides the checksum capability to verify whether the complete data has arrived or not; the IP&nbsp;layer does not provide these two services.</p>
+<h3 class="h3">Features of UDP protocol</h3>
+<p><strong>The following are the features of the UDP protocol:</strong></p>
+<ul class="points">
+<li><strong>Transport layer protocol</strong></li>
+</ul>
+<p>UDP is the simplest transport layer communication protocol. It contains a minimum amount of communication mechanisms. It is considered an unreliable protocol, and it is based on best-effort delivery services. UDP provides no acknowledgment mechanism, which means that the receiver does not send the acknowledgment for the received packet, and the sender also does not wait for the acknowledgment for the packet that it has sent.</p>
+<ul class="points">
+<li><strong>Connectionless</strong></li>
+</ul>
+<p>The UDP is a connectionless protocol as it does not create a virtual path to transfer the data. It does not use the virtual path, so packets are sent in different paths between the sender and the receiver, which leads to the loss of packets or received out of order.</p>
+<p><strong>Ordered delivery of data is not guaranteed.</strong></p>
+<p>In the case of UDP, the datagrams are sent in some order will be received in the same order is not guaranteed as the datagrams are not numbered.</p>
+<ul class="points">
+<li><strong>Ports</strong></li>
+</ul>
+<p>The UDP protocol uses different port numbers so that the data can be sent to the correct destination. The port numbers are defined between 0 and 1023.</p>
+<ul class="points">
+<li><strong>Faster transmission</strong></li>
+</ul>
+<p>UDP enables faster transmission as it is a connectionless protocol, i.e., no virtual path is required to transfer the data. But there is a chance that the individual packet is lost, which affects the transmission quality. On the other hand, if the packet is lost in TCP connection, that packet will be resent, so it guarantees the delivery of the data packets.</p>
+<ul class="points">
+<li><strong>Acknowledgment mechanism</strong></li>
+</ul>
+<p>The UDP does have any acknowledgment mechanism, i.e., there is no handshaking between the UDP sender and UDP receiver. If the message is sent in TCP, then the receiver acknowledges that I am ready, then the sender sends the data. In the case of TCP, the handshaking occurs between the sender and the receiver, whereas in UDP, there is no handshaking between the sender and the receiver.</p>
+<ul class="points">
+<li><strong>Segments are handled independently.</strong></li>
+</ul>
+<p>Each UDP segment is handled individually of others as each segment takes different path to reach the destination. The UDP segments can be lost or delivered out of order to reach the destination as there is no connection setup between the sender and the receiver.</p>
+<ul class="points">
+<li><strong>Stateless</strong></li>
+</ul>
+<p>It is a stateless protocol that means that the sender does not get the acknowledgement for the packet which has been sent.</p>
+<h3 class="h3">Why do we require the UDP protocol?</h3>
+<p>As we know that the UDP is an unreliable protocol, but we still require a UDP protocol in some cases. The UDP is deployed where the packets require a large amount of bandwidth along with the actual data. For example, in video streaming, acknowledging thousands of packets is troublesome and wastes a lot of bandwidth. In the case of video streaming, the loss of some packets couldn't create a problem, and it can also be ignored.</p>
+<h3 class="h3">UDP Header Format</h3>
+<p>In UDP, the header size is 8 bytes, and the packet size is upto 65,535 bytes. But this packet size is not possible as the data needs to be encapsulated in the IP datagram, and an IP packet, the header size can be 20 bytes; therefore, the maximum of UDP would be 65,535 minus 20. The size of the data that the UDP packet can carry would be 65,535 minus 28 as 8 bytes for the header of the UDP packet and 20 bytes for IP header.</p>
+<p><strong>The UDP header contains four fields:</strong></p>
+<ul class="points">
+<li><strong>Source port number:</strong>&nbsp;It is 16-bit information that identifies which port is going t send the packet.</li>
+<li><strong>Destination port number:</strong>&nbsp;It identifies which port is going to accept the information. It is 16-bit information which is used to identify application-level service on the destination machine.</li>
+<li><strong>Length:</strong>&nbsp;It is 16-bit field that specifies the entire length of the UDP packet that includes the header also. The minimum value would be 8-byte as the size of the header is 8 bytes.</li>
+<li><strong>Checksum:</strong>&nbsp;It is a 16-bits field, and it is an optional field. This checksum field checks whether the information is accurate or not as there is the possibility that the information can be corrupted while transmission. It is an optional field, which means that it depends upon the application, whether it wants to write the checksum or not. If it does not want to write the checksum, then all the 16 bits are zero; otherwise, it writes the checksum. In UDP, the checksum field is applied to the entire packet, i.e., header as well as data part whereas, in IP, the checksum field is applied to only the header field.</li>
+</ul>
+<h3 class="h3">Limitations</h3>
+<ul class="points">
+<li>It provides an unreliable connection delivery service. It does not provide any services of IP except that it provides process-to-process communication.</li>
+<li>The UDP message can be lost, delayed, duplicated, or can be out of order.</li>
+<li>It does not provide a reliable transport delivery service. It does not provide any acknowledgment or flow control mechanism. However, it does provide error control to some extent.</li>
+</ul>
+<h3 class="h3">Advantages</h3>
+<ul class="points">
+<li>It produces a minimal number of overheads.</li>
+</ul>
+<p>&nbsp;</p>
+<h3><strong>Applications of UDP:</strong>&nbsp;</h3>
+<ul>
+<li>Used for simple request response communication when size of data is less and hence there is lesser concern about flow and error control.</li>
+<li>It is suitable protocol for multicasting as UDP supports packet switching.</li>
+<li>UDP is used for some routing update protocols like RIP(Routing Information Protocol).</li>
+<li>Normally used for real time applications which can not tolerate uneven delays between sections of a received message.</li>
+<li>Following implementations uses UDP as a transport layer protocol:&nbsp;
+<ul>
+<li>NTP (Network Time Protocol)</li>
+<li>DNS (Domain Name Service)</li>
+<li>BOOTP, DHCP.</li>
+<li>NNP (Network News Protocol)</li>
+<li>Quote of the day protocol</li>
+<li>TFTP, RTSP, RIP.</li>
+</ul>
+</li>
+<li>Application layer can do some of the tasks through UDP-&nbsp;
+<ul>
+<li>Trace Route</li>
+<li>Record Route</li>
+<li>Time stamp</li>
+</ul>
+</li>
+<li>UDP takes datagram from Network Layer, attach its header and send it to the user. So, it works fast.</li>
+<li>Actually UDP is null protocol if you remove checksum field.
+<ul style="list-style-type: circle;">
+<li>Reduce the requirement of computer resources.</li>
+<li>When using the Multicast or Broadcast to transfer.</li>
+<li>The transmission of Real-time packets, mainly in multimedia applications.</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

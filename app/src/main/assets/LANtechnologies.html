@@ -1,0 +1,34 @@
+<h1>LAN Technologies</h1>
+<h2><strong>Ethernet :-</strong></h2>
+<p><br />Ethernet is most widely used LAN Technology, which is defined under IEEE standards 802.3. The reason behind its wide usability is Ethernet is easy to understand, implement, maintain and allows low-cost network implementation. Also, Ethernet offers flexibility in terms of topologies which are allowed.Ethernet generally uses Bus Topology. Ethernet operates in two layers of the OSI model, Physical Layer, and Data Link Layer. For Ethernet, the protocol data unit is Frame since we mainly deal with DLL. In order to handle collision, the Access control mechanism used in Ethernet is CSMA/CD.<br />Manchester Encoding Technique is used in Ethernet.</p>
+<p>Since we are talking about IEEE 802.3 standard Ethernet therefore, 0 is expressed by a high-to-low transition, a 1 by the low-to-high transition. In both Manchester Encoding and Differential Manchester, Encoding Baud rate is double of bit rate.</p>
+<pre> Baud rate = 2* Bit rate </pre>
+<p>Ethernet LANs consist of network nodes and interconnecting media or link. The network nodes can be of two types:<br /><strong>Data Terminal Equipment (DTE):-</strong>&nbsp;Generally, DTEs are the end devices that convert the user information into signals or reconvert the received signals. DTEs devices are: personal computers, workstations, file servers or print servers also referred to as end stations. These devices are either the source or the destination of data frames. The data terminal equipment may be a single piece of equipment or multiple pieces of equipment that are interconnected and perform all the required functions to allow the user to communicate. A user can interact to DTE or DTE may be a user.</p>
+<p><strong>Data Communication Equipment (DCE):-</strong>&nbsp;DCEs are the intermediate network devices that receive and forward frames across the network. They may be either standalone devices such as repeaters, network switches, routers or maybe communications interface units such as interface cards and modems. The DCE performs functions such as signal conversion, coding and may be a part of the DTE or intermediate equipment.</p>
+<p>Currently, these data rates are defined for operation over optical fibers and twisted-pair cables:<br /><strong>i) Fast Ethernet</strong><br />Fast Ethernet refers to an Ethernet network that can transfer data at a rate of 100 Mbit/s.</p>
+<p><strong>ii) Gigabit Ethernet</strong><br />Gigabit Ethernet delivers a data rate of 1,000 Mbit/s (1 Gbit/s).</p>
+<p><strong>iii) 10 Gigabit Ethernet</strong><br />10 Gigabit Ethernet is the recent generation and delivers a data rate of 10 Gbit/s (10,000 Mbit/s). It is generally used for backbones in high-end applications requiring high data rates.</p>
+<p><strong>ALOHA</strong><br />The Aloha protocol was designed as part of a project at the University of Hawaii. It provided data transmission between computers on several of the Hawaiian Islands involving packet radio networks. Aloha is a multiple access protocol at the data link layer and proposes how multiple terminals access the medium without interference or collision.</p>
+<p>There are two different versions of ALOHA:<br /><strong>1. Pure Aloha</strong><br />Pure Aloha is an un-slotted, decentralized, and simple to implement a protocol. In pure ALOHA, the stations simply transmit frames whenever they want data to send. It does not check whether the channel is busy or not before transmitting. In case, two or more stations transmit simultaneously, the collision occurs and frames are destroyed. Whenever any station transmits a frame, it expects the acknowledgment from the receiver. If it is not received within a specified time, the station assumes that the frame or acknowledgment has been destroyed. Then, the station waits for a random amount of time and sends the frame again. This randomness helps in avoiding more collisions. This scheme works well in small networks where the load is not much. But in largely loaded networks, this scheme fails poorly. This led to the development of Slotted Aloha.<br />To assure pure aloha: Its throughput and rate of transmission of the frame to be predicted.<br />For that to make some assumption:<br />i) All the frames should be the same length.<br />ii) Stations can not generate frame while transmitting or trying to transmit frame.<br />iii)The population of stations attempts to transmit (both new frames and old frames that collided) according to a Poisson distribution.</p>
+<pre>Vulnerable Time = 2 * Tt </pre>
+<p><strong>Efficiency of Pure ALOHA:</strong></p>
+<pre><strong>S</strong>pure= G * e^-2G 
+<em>where G is number of stations wants to transmit in Tt slot. </em>
+
+<strong>Maximum Efficiency:</strong>
+Maximum Efficiency will be obtained when G=1/2
+
+(<strong>S</strong>pure)<em>max</em> = 1/2 * e^-1
+           = 0.184 </pre>
+<p>Which means, in Pure ALOHA, only about 18.4% of the time is used for successful transmissions.</p>
+<h2>2. Slotted Aloha</h2>
+<p><em><br /></em>This is quite similar to Pure Aloha, differing only in the way transmissions take place. <br />Instead of transmitting right at demand time, the sender waits for some time.<br />In slotted ALOHA, the time of the shared channel is divided into discrete intervals called&nbsp;Slots. <br />The stations are eligible to send a frame only at the beginning of the slot and only one frame per slot is sent. <br />If any station is not able to place the frame onto the channel at the beginning of the slot, it has to wait until the beginning of the next time slot. <br />There is still a possibility of collision if two stations try to send at the beginning of the same time slot. <br />But still the number of collisions that can possibly take place is reduced by a large margin and the performance becomes much well compared to Pure Aloha.<strong><em><br /></em></strong></p>
+<p><strong>Efficiency of Slotted ALOHA:</strong></p>
+<pre> <strong>S</strong><em>slotted</em> = G * e^-G
+
+<strong>Maximum Efficiency:</strong>
+(<strong>S</strong>slotted)<em>max</em> = 1 * e^-1 
+              = 1/e = 0.368 
+Maximum Efficiency, in Slotted ALOHA, is 36.8%.</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

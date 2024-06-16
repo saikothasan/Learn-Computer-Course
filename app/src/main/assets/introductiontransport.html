@@ -1,0 +1,64 @@
+<h1>Transport Layer</h1>
+<p>The&nbsp;<strong>Transport Layer</strong>&nbsp;in the Open System Interconnection (OSI) model is responsible for end-to-end delivery over a network. Whereas the network layer is concerned with the end - to- end delivery of individual packets and it does not recognize any relationship between those packets.</p>
+<ul>
+<li>This layer treats each packet independently because each packet belongs to a different message.</li>
+<li>The&nbsp;<strong>transport layer</strong>&nbsp;ensures that each message should reach its destination completely and in order so that it maintains error and flow control to the source to destination to ensure proper data transmission.</li>
+<li>The&nbsp;<strong>transport layer</strong>&nbsp;establishes a connection between two end ports. A connection is a single logical path from source to destination which is associated with all the packets in a message.</li>
+<li><strong>Transport Layer</strong>&nbsp;uses some standard protocols to enhance its functionalities are TCP(Transmission Control Protocol), UDP( User Datagram Protocol), DCCP( Datagram Congestion Control Protocol), etc.</li>
+</ul>
+<h2>Functions of the transport layer</h2>
+<p>Specific functions of the&nbsp;<strong>transport layer</strong>&nbsp;are as follows:</p>
+<h3><strong>1. Service-point addressing</strong></h3>
+<ul>
+<li>Computers often run many programs at the same time. Due to this, source-to-destination delivery means delivery from a specific job (currently running program) on one computer to a specific job (currently running program) on the other system not only one computer to the next.</li>
+<li>For this reason, the&nbsp;<strong>transport layer</strong>&nbsp;added a specific type of address to its header, it is referred to as a service point address or port address.</li>
+<li>By this address each packet reaches the correct computer and also the&nbsp;<strong>transport layer</strong>&nbsp;gets the complete message to the correct process on that computer.</li>
+</ul>
+<h3><strong>2. Segmentation and Reassembly</strong></h3>
+<ul>
+<li>In segmentation, a message is divided into transmittable segments; each segment containing a sequence number. This number enables this layer to reassemble the message.</li>
+<li>Upon arriving at its destination system message is reassembled correctly, identify and replaces packets that were lost in transmission.</li>
+</ul>
+<h3><strong>3. Connection Control</strong></h3>
+<p>It can be either of two types:</p>
+<ol type="i">
+<li>Connectionless Transport Layer</li>
+<li>Connection Oriented Transport Layer</li>
+</ol>
+<h4><strong>i) Connectionless Transport Layer</strong></h4>
+<ul>
+<li>This Transport Layer treats each packet as an individual and delivers it to the destination machine.</li>
+<li>In this type of transmission, the receiver does not send an acknowledgment to the sender about the receipt of a packet. This is a faster communication technique.</li>
+</ul>
+<h4><strong>ii) Connection Oriented Transport Layer</strong></h4>
+<ul>
+<li>This Transport Layer creates a connection with the Transport Layer at the destination machine before transmitting the packets to the destination.</li>
+<li>To Create a connection following three steps are possible:
+<ul>
+<li>Connection establishment</li>
+<li>Data transfer</li>
+<li>Connection termination</li>
+</ul>
+</li>
+</ul>
+<p>When all the data are transmitted connection is terminated. Connectionless Service is less reliable than connection Oriented Service.</p>
+<h3><strong>4. Multiplexing and Demultiplexing</strong></h3>
+<ul>
+<li>Multiple packets from diverse applications are transmitted across a network needs very dedicated control mechanisms, which are found in the transport layer.</li>
+<li>The transport layer accepts packets from different processes. These packets are differentiated by their port numbers and pass them to the network layer after adding proper headers.</li>
+<li>In Demultiplexing, at the receiver's side to obtain the data coming from various processes. It receives the segments of data from the network layer and delivers it to the appropriate process running on the receiver's machine.</li>
+</ul>
+<h3><strong>5. Flow control</strong></h3>
+<ul>
+<li>The transport layer also responsible for the flow control mechanism between the adjacent layers of the TCP/IP model.</li>
+<li>It does not perform across a single link even it performs an end-to-end node.</li>
+<li>By imposing flow control techniques data loss can be prevented from the cause of the sender and slow receiver.</li>
+<li>For instance, it uses the method of sliding window protocol in this method receiver sends a window back to the sender to inform the size of the data is received.</li>
+</ul>
+<h3><strong>6. Error Control</strong></h3>
+<ul>
+<li>Error Control is also performed end to end like the data link layer.</li>
+<li>In this layer to ensure that the entire message arrives at the receiving transport layer without any error(damage, loss or duplication). Error Correction is achieved through retransmission of the packet.</li>
+<li>The data has arrived or not and checks for the integrity of data, it uses the ACK and NACK services to inform the sender.</li>
+</ul>
+<p>&nbsp;</p>

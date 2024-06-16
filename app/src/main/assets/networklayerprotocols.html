@@ -1,0 +1,102 @@
+<h1 class="h1">Network Layer Protocols</h1>
+<p>TCP/IP supports the following protocols:</p>
+<h2 class="h2">ARP</h2>
+<ul class="points">
+<li>ARP stands for Address Resolution Protocol.</li>
+<li>It is used to associate an IP address with the MAC address.</li>
+<li>Each device on the network is recognized by the MAC address imprinted on the NIC. Therefore, we can say that devices need the MAC address for communication on a local area network. MAC address can be changed easily. For example, if the NIC on a particular machine fails, the MAC address changes but IP address does not change. ARP is used to find the MAC address of the node when an internet address is known.</li>
+</ul>
+<h3 class="h2">How ARP works</h3>
+<p>If the host wants to know the physical address of another host on its network, then it sends an ARP query packet that includes the IP address and broadcast it over the network. Every host on the network receives and processes the ARP packet, but only the intended recipient recognizes the IP address and sends back the physical address. The host holding the datagram adds the physical address to the cache memory and to the datagram header, then sends back to the sender.</p>
+<h3 class="h2">Steps taken by ARP protocol</h3>
+<p>If a device wants to communicate with another device, the following steps are taken by the device:</p>
+<ul class="points">
+<li>The device will first look at its internet list, called the ARP cache to check whether an IP address contains a matching MAC address or not. It will check the ARP cache in command prompt by using a command&nbsp;<strong>arp-a</strong>.</li>
+</ul>
+<ul class="points">
+<li>If ARP cache is empty, then device broadcast the message to the entire network asking each device for a matching MAC address.</li>
+<li>The device that has the matching IP address will then respond back to the sender with its MAC address</li>
+<li>Once the MAC address is received by the device, then the communication can take place between two devices.</li>
+<li>If the device receives the MAC address, then the MAC address gets stored in the ARP cache. We can check the ARP cache in command prompt by using a command arp -a.</li>
+</ul>
+<h3 class="h2">There are two types of ARP entries:</h3>
+<ul class="points">
+<li><strong>Dynamic entry:</strong>&nbsp;It is an entry which is created automatically when the sender broadcast its message to the entire network. Dynamic entries are not permanent, and they are removed periodically.</li>
+<li><strong>Static entry:</strong>&nbsp;It is an entry where someone manually enters the IP to MAC address association by using the ARP command utility.</li>
+</ul>
+<h2 class="h2">RARP</h2>
+<ul class="points">
+<li>RARP stands for&nbsp;<strong>Reverse Address Resolution Protocol</strong>.</li>
+<li>If the host wants to know its IP address, then it broadcast the RARP query packet that contains its physical address to the entire network. A RARP server on the network recognizes the RARP packet and responds back with the host IP address.</li>
+<li>The protocol which is used to obtain the IP address from a server is known as&nbsp;<strong>Reverse Address Resolution Protocol</strong>.</li>
+<li>The message format of the RARP protocol is similar to the ARP protocol.</li>
+<li>Like ARP frame, RARP frame is sent from one machine to another encapsulated in the data portion of a frame.</li>
+</ul>
+<h2 class="h2">ICMP</h2>
+<ul class="points">
+<li>ICMP stands for Internet Control Message Protocol.</li>
+<li>The ICMP is a network layer protocol used by hosts and routers to send the notifications of IP datagram problems back to the sender.</li>
+<li>ICMP uses echo test/reply to check whether the destination is reachable and responding.</li>
+<li>ICMP handles both control and error messages, but its main function is to report the error but not to correct them.</li>
+<li>An IP datagram contains the addresses of both source and destination, but it does not know the address of the previous router through which it has been passed. Due to this reason, ICMP can only send the messages to the source, but not to the immediate routers.</li>
+<li>ICMP protocol communicates the error messages to the sender. ICMP messages cause the errors to be returned back to the user processes.</li>
+<li>ICMP messages are transmitted within IP datagram.</li>
+</ul>
+<h2 class="h2">Error Reporting</h2>
+<p>ICMP protocol reports the error messages to the sender.</p>
+<p><strong>Five types of errors are handled by the ICMP protocol:</strong></p>
+<ul class="points">
+<li>Destination unreachable</li>
+<li>Source Quench</li>
+<li>Time Exceeded</li>
+<li>Parameter problems</li>
+<li>Redirection
+<p><strong>Destination unreachable:</strong>&nbsp;The message of "Destination Unreachable" is sent from receiver to the sender when destination cannot be reached, or packet is discarded when the destination is not reachable.</p>
+<p><strong>Source Quench:</strong>&nbsp;The purpose of the source quench message is congestion control. The message sent from the congested router to the source host to reduce the transmission rate. ICMP will take the IP of the discarded packet and then add the source quench message to the IP datagram to inform the source host to reduce its transmission rate. The source host will reduce the transmission rate so that the router will be free from congestion.</p>
+<p><strong>Time Exceeded:</strong>&nbsp;Time Exceeded is also known as "Time-To-Live". It is a parameter that defines how long a packet should live before it would be discarded.</p>
+</li>
+</ul>
+<p><strong>There are two ways when Time Exceeded message can be generated:</strong></p>
+<p>Sometimes packet discarded due to some bad routing implementation, and this causes the looping issue and network congestion. Due to the looping issue, the value of TTL keeps on decrementing, and when it reaches zero, the router discards the datagram. However, when the datagram is discarded by the router, the time exceeded message will be sent by the router to the source host.</p>
+<p>When destination host does not receive all the fragments in a certain time limit, then the received fragments are also discarded, and the destination host sends time Exceeded message to the source host.</p>
+<ul class="points">
+<li><strong>Parameter problems:</strong>&nbsp;When a router or host discovers any missing value in the IP datagram, the router discards the datagram, and the "parameter problem" message is sent back to the source host.</li>
+<li><strong>Redirection:</strong>&nbsp;Redirection message is generated when host consists of a small routing table. When the host consists of a limited number of entries due to which it sends the datagram to a wrong router. The router that receives a datagram will forward a datagram to a correct router and also sends the "Redirection message" to the host to update its routing table.</li>
+</ul>
+<h2 class="h2">IGMP</h2>
+<ul class="points">
+<li>IGMP stands for&nbsp;<strong>Internet Group Message Protocol</strong>.</li>
+<li>The IP protocol supports two types of communication:
+<ul class="points">
+<li><strong>Unicasting:</strong>&nbsp;It is a communication between one sender and one receiver. Therefore, we can say that it is one-to-one communication.</li>
+<li><strong>Multicasting:</strong>&nbsp;Sometimes the sender wants to send the same message to a large number of receivers simultaneously. This process is known as multicasting which has one-to-many communication.</li>
+</ul>
+</li>
+<li>The IGMP protocol is used by the hosts and router to support multicasting.</li>
+<li>The IGMP protocol is used by the hosts and router to identify the hosts in a LAN that are the members of a group.</li>
+</ul>
+<ul class="points">
+<li>IGMP is a part of the IP layer, and IGMP has a fixed-size message.</li>
+</ul>
+<h3 class="h2">IGMP Messages</h3>
+<ul class="points">
+<li><strong>Membership Query message</strong>
+<ul class="points">
+<li>This message is sent by a router to all hosts on a local area network to determine the set of all the multicast groups that have been joined by the host.</li>
+<li>It also determines whether a specific multicast group has been joined by the hosts on a attached interface.</li>
+<li>The group address in the query is zero since the router expects one response from a host for every group that contains one or more members on that host.</li>
+</ul>
+</li>
+<li><strong>Membership Report message</strong>
+<ul class="points">
+<li>The host responds to the membership query message with a membership report message.</li>
+<li>Membership report messages can also be generated by the host when a host wants to join the multicast group without waiting for a membership query message from the router.</li>
+<li>Membership report messages are received by a router as well as all the hosts on an attached interface.</li>
+<li>Each membership report message includes the multicast address of a single group that the host wants to join.</li>
+<li>IGMP protocol does not care which host has joined the group or how many hosts are present in a single group. It only cares whether one or more attached hosts belong to a single multicast group.</li>
+<li>The membership Query message sent by a router also includes a "<strong>Maximum Response time</strong>". After receiving a membership query message and before sending the membership report message, the host waits for the random amount of time from 0 to the maximum response time. If a host observes that some other attached host has sent the "<strong>Maximum Report message</strong>", then it discards its "<strong>Maximum Report message</strong>" as it knows that the attached router already knows that one or more hosts have joined a single multicast group. This process is known as feedback suppression. It provides the performance optimization, thus avoiding the unnecessary transmission of a "<strong>Membership Report message</strong>".</li>
+</ul>
+</li>
+<li><strong>Leave Report</strong><br />When the host does not send the "Membership Report message", it means that the host has left the group. The host knows that there are no members in the group, so even when it receives the next query, it would not report the group.</li>
+</ul>
+<p>&nbsp;</p>

@@ -1,0 +1,87 @@
+<h1 class="h1">Transport Layer</h1>
+<ul class="points">
+<li>The transport layer is a 4<sup>th</sup>&nbsp;layer from the top.</li>
+<li>The main role of the transport layer is to provide the communication services directly to the application processes running on different hosts.</li>
+<li>The transport layer provides a logical communication between application processes running on different hosts. Although the application processes on different hosts are not physically connected, application processes use the logical communication provided by the transport layer to send the messages to each other.</li>
+<li>The transport layer protocols are implemented in the end systems but not in the network routers.</li>
+<li>A computer network provides more than one protocol to the network applications. For example, TCP and UDP are two transport layer protocols that provide a different set of services to the network layer.</li>
+<li>All transport layer protocols provide multiplexing/demultiplexing service. It also provides other services such as reliable data transfer, bandwidth guarantees, and delay guarantees.</li>
+<li>Each of the applications in the application layer has the ability to send a message by using TCP or UDP. The application communicates by using either of these two protocols. Both TCP and UDP will then communicate with the internet protocol in the internet layer. The applications can read and write to the transport layer. Therefore, we can say that communication is a two-way process.</li>
+</ul>
+<h2 class="h2">Services provided by the Transport Layer</h2>
+<p>The services provided by the transport layer are similar to those of the data link layer. The data link layer provides the services within a single network while the transport layer provides the services across an internetwork made up of many networks. The data link layer controls the physical layer while the transport layer controls all the lower layers.</p>
+<p><strong>The services provided by the transport layer protocols can be divided into five categories:</strong></p>
+<ul class="points">
+<li>End-to-end delivery</li>
+<li>Addressing</li>
+<li>Reliable delivery</li>
+<li>Flow control</li>
+<li>Multiplexing</li>
+</ul>
+<h2 class="h3">End-to-end delivery:</h2>
+<p>The transport layer transmits the entire message to the destination. Therefore, it ensures the end-to-end delivery of an entire message from a source to the destination.</p>
+<h2 class="h3">Reliable delivery:</h2>
+<p>The transport layer provides reliability services by retransmitting the lost and damaged packets.</p>
+<p><strong>The reliable delivery has four aspects:</strong></p>
+<ul class="points">
+<li>Error control</li>
+<li>Sequence control</li>
+<li>Loss control</li>
+<li>Duplication control</li>
+</ul>
+<p><strong>Error Control</strong></p>
+<ul class="points">
+<li>The primary role of reliability is&nbsp;<strong>Error Control</strong>. In reality, no transmission will be 100 percent error-free delivery. Therefore, transport layer protocols are designed to provide error-free transmission.</li>
+<li>The data link layer also provides the error handling mechanism, but it ensures only node-to-node error-free delivery. However, node-to-node reliability does not ensure the end-to-end reliability.</li>
+<li>The data link layer checks for the error between each network. If an error is introduced inside one of the routers, then this error will not be caught by the data link layer. It only detects those errors that have been introduced between the beginning and end of the link. Therefore, the transport layer performs the checking for the errors end-to-end to ensure that the packet has arrived correctly.</li>
+</ul>
+<p><strong>Sequence Control</strong></p>
+<ul class="points">
+<li>The second aspect of the reliability is sequence control which is implemented at the transport layer.</li>
+<li>On the sending end, the transport layer is responsible for ensuring that the packets received from the upper layers can be used by the lower layers. On the receiving end, it ensures that the various segments of a transmission can be correctly reassembled.</li>
+</ul>
+<p><strong>Loss Control</strong></p>
+<p>Loss Control is a third aspect of reliability. The transport layer ensures that all the fragments of a transmission arrive at the destination, not some of them. On the sending end, all the fragments of transmission are given sequence numbers by a transport layer. These sequence numbers allow the receiver?s transport layer to identify the missing segment.</p>
+<p><strong>Duplication Control</strong></p>
+<p>Duplication Control is the fourth aspect of reliability. The transport layer guarantees that no duplicate data arrive at the destination. Sequence numbers are used to identify the lost packets; similarly, it allows the receiver to identify and discard duplicate segments.</p>
+<h2 class="h3">Flow Control</h2>
+<p>Flow control is used to prevent the sender from overwhelming the receiver. If the receiver is overloaded with too much data, then the receiver discards the packets and asking for the retransmission of packets. This increases network congestion and thus, reducing the system performance. The transport layer is responsible for flow control. It uses the sliding window protocol that makes the data transmission more efficient as well as it controls the flow of data so that the receiver does not become overwhelmed. Sliding window protocol is byte oriented rather than frame oriented.</p>
+<h2 class="h3">Multiplexing</h2>
+<p>The transport layer uses the multiplexing to improve transmission efficiency.</p>
+<p><strong>Multiplexing can occur in two ways:</strong></p>
+<ul class="points">
+<li><strong>Upward multiplexing:</strong>&nbsp;Upward multiplexing means multiple transport layer connections use the same network connection. To make more cost-effective, the transport layer sends several transmissions bound for the same destination along the same path; this is achieved through upward multiplexing.</li>
+</ul>
+<ul class="points">
+<li><strong>Downward multiplexing:</strong>&nbsp;Downward multiplexing means one transport layer connection uses the multiple network connections. Downward multiplexing allows the transport layer to split a connection among several paths to improve the throughput. This type of multiplexing is used when networks have a low or slow capacity.</li>
+</ul>
+<h2 class="h3">Addressing</h2>
+<ul class="points">
+<li>According to the layered model, the transport layer interacts with the functions of the session layer. Many protocols combine session, presentation, and application layer protocols into a single layer known as the application layer. In these cases, delivery to the session layer means the delivery to the application layer. Data generated by an application on one machine must be transmitted to the correct application on another machine. In this case, addressing is provided by the transport layer.</li>
+<li>The transport layer provides the user address which is specified as a station or port. The port variable represents a particular TS user of a specified station known as a Transport Service access point (TSAP). Each station has only one transport entity.</li>
+<li>The transport layer protocols need to know which upper-layer protocols are communicating.</li>
+</ul>
+<h1>Transport Layer Security Protocols</h1>
+<p>The following sections describe the security protocols that operate over TCP/IP or some other reliable but insecure transport. They are categorized as Transport layer security protocols because their intent is to secure the Transport layer as well as to provide methods for implementing privacy, authentication, and integrity above the Transport layer.</p>
+<h3>The Secure Socket Layer Protocol</h3>
+<p>The Secure Socket Layer (SSL) is an open protocol designed by Netscape; it specifies a mechanism for providing data security layered between application protocols&nbsp;(such as HTTP, Telnet, NNTP, or FTP) and TCP/IP. It provides data encryption, server authentication, message integrity, and optional client authentication for a TCP/IP connection.</p>
+<p>The primary goal of SSL is to provide privacy and reliability between two communicating applications. This process is accomplished with the following three elements:</p>
+<p>&bull; The handshake protocol. This protocol negotiates the cryptographic parameters to be used between the client and the server session. When an SSL client and server first start communicating, they agree on a protocol version, select cryptographic algorithms, optionally authenticate each other, and use public-key encryption techniques to generate shared secrets.</p>
+<p>&bull; The record protocol. This protocol is used to exchange Application layer data. Application messages are fragmented into manageable blocks, optionally compressed, and a MAC (message authentication code) is applied; the result is encrypted and transmitted. The recipient takes the received data and decrypts it, verifies the MAC, decompresses and reassembles it, and delivers the result to the application protocol.</p>
+<p>&bull; The alert protocol. This protocol is used to indicate when errors have occurred or when a session between two hosts is being terminated.</p>
+<p>Let's look at an example using a Web client and server. The Web client initiates an SSL session by connecting to an SSL-capable server. A typical SSL-capable Web server accepts SSL connection requests on a different port (port 443 by default) than standard HTTP requests (port 80 by default). When the client connects to this port, it initiates a handshake that establishes the SSL session. After the handshake finishes, communication is encrypted and message integrity checks are performed until the SSL session expires. SSL creates a session during which the handshake must happen only once.</p>
+<p>The SSL handshake process is shown in Figure 2-20. (Refer to "Public Key Infrastructure and Distribution Models," later in this chapter, for more information about digital certificates.) The steps in the process are as follows:</p>
+<p>Step 1 The SSL client connects to the SSL server and requests the server to authenticate itself.</p>
+<p>Step 2 The server proves its identity by sending its digital certificate. This exchange may optionally include an entire certificate chain, up to some root certificate authority (CA). Certificates are verified by checking validity dates and verifying that the certificate bears the signature of a trusted CA.</p>
+<p>Step 3 The server may then initiate a request for client-side certificate authen-tication. However, because of a lack of a public key infrastructure, most servers today do not do client-side authentication.</p>
+<p>Step 4 The message encryption algorithm for encryption and the hash function for integrity are negotiated. Usually the client presents a list of all the algorithms it supports, and the server selects the strongest cipher available.</p>
+<p>Step 5 The client and server generate the session keys by following these steps:</p>
+<p>(a) The client generates a random number that it sends to the server, encrypted with the server's</p>
+<p>Security Technologies public key (obtained from the server's certificate).</p>
+<p>(b) The server responds with more random data (encrypted with the client's public key, if available; otherwise, it sends the data in cleartext).</p>
+<p>(c) The encryption keys are generated from this random data using hash functions.</p>
+<h4>The advantage of the SSL protocol is that it provides connection security that has three basic properties:</h4>
+<p>&bull; The connection is private. Encryption is used after an initial handshake to define a secret key. Symmetric cryptography is used for data encryption (for example, DES and RC4).</p>
+<p>&bull; The peer's identity can be authenticated using asymmetric, or public key, cryptography (for example, RSA and DSS).</p>
+<p>&bull; The connection is reliable. Message transport includes a message integrity check using a keyed MAC. Secure hash functions (such as SHA and MD5) are used for MAC computations.</p>
+<p>&nbsp;</p>

@@ -1,0 +1,101 @@
+<h1>Memory Management</h1>
+<p><strong>Memory Management</strong>&nbsp;is the process of controlling and coordinating computer memory, assigning portions known as blocks to various running programs to optimize the overall performance of the system.</p>
+<p>It is the most important function of an operating system that manages primary memory. It helps processes to move back and forward between the main memory and execution disk. It helps OS to keep track of every memory location, irrespective of whether it is allocated to some process or it remains free.</p>
+<h2>Why Use Memory Management?</h2>
+<p>Here, are reasons for using memory management:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>It allows you to check how much memory needs to be allocated to processes that decide which processor should get memory at what time.</p>
+</li>
+<li>
+<p>Tracks whenever inventory gets freed or unallocated. According to it will update the status.</p>
+</li>
+<li>
+<p>It allocates the space to application routines.</p>
+</li>
+<li>
+<p>It also make sure that these applications do not interfere with each other.</p>
+</li>
+<li>
+<p>Helps protect different processes from each other</p>
+</li>
+<li>
+<p>It places the programs in memory so that memory is utilized to its full extent.</p>
+</li>
+</ul>
+<h2>Memory Management Techniques</h2>
+<p>Here, are some most crucial memory management techniques:</p>
+<h3>Single Contiguous Allocation</h3>
+<p>It is the easiest memory management technique. In this method, all types of computer's memory except a small portion which is reserved for the OS is available for one application. For example, MS-DOS operating system allocates memory in this way. An embedded system also runs on a single application.</p>
+<h3>Partitioned Allocation</h3>
+<p>It divides primary memory into various memory partitions, which is mostly contiguous areas of memory. Every partition stores all the information for a specific task or job. This method consists of allotting a partition to a job when it starts &amp; unallocate when it ends.</p>
+<h3>Paged Memory Management</h3>
+<p>This method divides the computer's main memory into fixed-size units known as page frames. This hardware memory management unit maps pages into frames which should be allocated on a page basis.</p>
+<h3>Segmented Memory Management</h3>
+<p>Segmented memory is the only memory management method that does not provide the user's program with a linear and contiguous address space.</p>
+<p>Segments need hardware support in the form of a segment table. It contains the physical address of the section in memory, size, and other data like access protection bits and status.</p>
+<h2>What is Swapping?</h2>
+<p>Swapping is a method in which the process should be swapped temporarily from the main memory to the backing store. It will be later brought back into the memory for continue execution.</p>
+<p>Backing store is a hard disk or some other secondary storage device that should be big enough inorder to accommodate copies of all memory images for all users. It is also capable of offering direct access to these memory images.</p>
+<h3>Benefits of Swapping</h3>
+<p>Here, are major benefits/pros of swapping:</p>
+<ul style="list-style-type: circle;">
+<li>
+<p>It offers a higher degree of multiprogramming.</p>
+</li>
+<li>
+<p>Allows dynamic relocation. For example, if address binding at execution time is being used, then processes can be swap in different locations. Else in case of compile and load time bindings, processes should be moved to the same location.</p>
+</li>
+<li>
+<p>It helps to get better utilization of memory.</p>
+</li>
+<li>
+<p>Minimum wastage of CPU time on completion so it can easily be applied to a priority-based scheduling method to improve its performance.</p>
+</li>
+</ul>
+<h2>What is Memory allocation?</h2>
+<p>Memory allocation is a process by which computer programs are assigned memory or space.</p>
+<p>Here, main memory is divided into two types of partitions</p>
+<ol>
+<li><strong>Low Memory</strong>&nbsp;- Operating system resides in this type of memory.</li>
+<li><strong>High Memory</strong>- User processes are held in high memory.</li>
+</ol>
+<h2>Partition Allocation</h2>
+<p>Memory is divided into different blocks or partitions. Each process is allocated according to the requirement. Partition allocation is an ideal method to avoid internal fragmentation.</p>
+<p>Below are the various partition allocation schemes :</p>
+<ul style="list-style-type: circle;">
+<li><strong>First Fit</strong>: In this type fit, the partition is allocated, which is the first sufficient block from the beginning of the main memory.</li>
+<li><strong>Best Fit:&nbsp;</strong>It allocates the process to the partition that is the first smallest partition among the free partitions.</li>
+<li><strong>Worst Fit:&nbsp;</strong>It allocates the process to the<strong>&nbsp;</strong>partition, which is the largest sufficient freely available partition in the main memory.</li>
+<li><strong>Next Fit:</strong>&nbsp;It is mostly similar to the first Fit, but this Fit, searches for the first sufficient partition from the last allocation point.</li>
+</ul>
+<h2>What is Paging?</h2>
+<p>Paging is a storage mechanism that allows OS to retrieve processes from the secondary storage into the main memory in the form of pages. In the Paging method, the main memory is divided into small fixed-size blocks of physical memory, which is called frames. The size of a frame should be kept the same as that of a page to have maximum utilization of the main memory and to avoid external fragmentation. Paging is used for faster access to data, and it is a logical concept.</p>
+<h2>What is Fragmentation?</h2>
+<p>Processes are stored and removed from memory, which creates free memory space, which are too small to use by other processes.</p>
+<p>After sometimes, that processes not able to allocate to memory blocks because its small size and memory blocks always remain unused is called fragmentation. This type of problem happens during a dynamic memory allocation system when free blocks are quite small, so it is not able to fulfill any request.</p>
+<p>Two types of Fragmentation methods are:</p>
+<ol>
+<li>External fragmentation</li>
+<li>Internal fragmentation</li>
+</ol>
+<ul style="list-style-type: circle;">
+<li>External fragmentation can be reduced by rearranging memory contents to place all free memory together in a single block.</li>
+<li>The internal fragmentation can be reduced by assigning the smallest partition, which is still good enough to carry the entire process.</li>
+</ul>
+<h3>Summary:</h3>
+<ul style="list-style-type: circle;">
+<li>Memory management is the process of controlling and coordinating computer memory, assigning portions called blocks to various running programs to optimize the overall performance of the system.</li>
+<li>It allows you to check how much memory needs to be allocated to processes that decide which processor should get memory at what time.</li>
+<li>In Single Contiguous Allocation, all types of computer's memory except a small portion which is reserved for the OS is available for one application</li>
+<li>Partitioned Allocation method divides primary memory into various memory partitions, which is mostly contiguous areas of memory</li>
+<li>Paged Memory Management method divides the computer's main memory into fixed-size units known as page frames</li>
+<li>Segmented memory is the only memory management method that does not provide the user's program with a linear and contiguous address space.</li>
+<li>Swapping is a method in which the process should be swapped temporarily from the main memory to the backing store. It will be later brought back into the memory for continue execution.</li>
+<li>Memory allocation is a process by which computer programs are assigned memory or space.</li>
+<li>Paging is a storage mechanism that allows OS to retrieve processes from the secondary storage into the main memory in the form of pages.</li>
+<li>Fragmentation refers to the condition of a disk in which files are divided into pieces scattered around the disk.</li>
+<li>Segmentation method works almost similarly to paging. The only difference between the two is that segments are of variable-length, whereas, in the paging method, pages are always of fixed size.</li>
+<li>Dynamic loading is a routine of a program which is not loaded until the program calls it.</li>
+<li>Linking is a method that helps OS to collect and merge various modules of code and data into a single executable file.</li>
+</ul>

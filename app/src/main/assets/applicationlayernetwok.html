@@ -1,0 +1,60 @@
+<h2>What<strong>&nbsp;is the Application Layer?</strong></h2>
+<p>The &ldquo;application layer&rdquo; is one of the seven layers that appears in the Open Systems Interconnection (OSI) model. This is a security framework that allows developers to conceptualize the security of their software as seven interconnected layers:</p>
+<ol>
+<li>The physical layer</li>
+<li>The data link layer</li>
+<li>The network layer</li>
+<li>The transport layer</li>
+<li>The session layer</li>
+<li>The presentation layer</li>
+<li>The application layer</li>
+</ol>
+<p>Three of these layers relate to media, and four to hosting. They run from the most basic hardware and infrastructure level&mdash;the physical layer&mdash;to the layer that is closest to the way that users actually interact with software, the application layer. Each layer is designed to build upon the last, and viewing software like this allows developers to isolate security threats to the level of hardware or software that they are most relevant to.</p>
+<p>For most software developers, layers 4 to 7 are the most important to watch for vulnerabilities. Layers 1 through 3 are typically administered in-house or on-premises and taken care of by most leading web hosting providers. On the other hand, the most common security vulnerabilities that businesses face usually appear in the later layers, which are more user-focused. Of these, the application layer is by far the most liable to be attacked, but is often forgotten about.</p>
+<h2>Threats<strong>&nbsp;to the Application Layer</strong></h2>
+<p>The application layer is the most vulnerable layer in the OSI model for two reasons. The first is that, since it is closest to the end user, it offers a larger attack surface than any of the layers that precede it. Second, the layers &ldquo;below&rdquo; the application layer only typically see interactions with users who are more conscious of security.</p>
+<p>The types of threats that the application layer is exposed to will be familiar to any developer who has worked with web security:</p>
+<ol>
+<li>DDoS attacks, which require applications to be shielded.</li>
+<li>HTTP floods that aim to lock up applications and deny access to legitimate users.</li>
+<li>SQL injections on applications that have poorly verified user input protocols.</li>
+<li>Cross-site scripting and parameter tampering.</li>
+</ol>
+<h1 class="post__title ma0 f3 fw5 flex-grow-1">Application Layer Protocols</h1>
+<p>There are several protocols which work for users in Application Layer. Application layer protocols can be broadly divided into two categories:</p>
+<ul class="list">
+<li>
+<p>Protocols which are used by users.For email for example, eMail.</p>
+</li>
+<li>
+<p>Protocols which help and support protocols used by users.For example DNS.</p>
+</li>
+</ul>
+<p>Few of Application layer protocols are described below:</p>
+<h2>Domain Name System</h2>
+<p>The Domain Name System (DNS) works on Client Server model. It uses UDP protocol for transport layer communication. DNS uses hierarchical domain based naming scheme. The DNS server is configured with Fully Qualified Domain Names (FQDN) and email addresses mapped with their respective Internet Protocol addresses.</p>
+<p>A DNS server is requested with FQDN and it responds back with the IP address mapped with it. DNS uses UDP port 53.</p>
+<h2>Simple Mail Transfer Protocol</h2>
+<p>The Simple Mail Transfer Protocol (SMTP) is used to transfer electronic mail from one user to another. This task is done by means of email client software (User Agents) the user is using. User Agents help the user to type and format the email and store it until internet is available. When an email is submitted to send, the sending process is handled by Message Transfer Agent which is normally comes inbuilt in email client software.</p>
+<p>Message Transfer Agent uses SMTP to forward the email to another Message Transfer Agent (Server side). While SMTP is used by end user to only send the emails, the Servers normally use SMTP to send as well as receive emails. SMTP uses TCP port number 25 and 587.</p>
+<p>Client software uses Internet Message Access Protocol (IMAP) or POP protocols to receive emails.</p>
+<h2>File Transfer Protocol</h2>
+<p>The File Transfer Protocol (FTP) is the most widely used protocol for file transfer over the network. FTP uses TCP/IP for communication and it works on TCP port 21. FTP works on Client/Server Model where a client requests file from Server and server sends requested resource back to the client.</p>
+<p>FTP uses out-of-band controlling i.e. FTP uses TCP port 20 for exchanging controlling information and the actual data is sent over TCP port 21.</p>
+<p>The client requests the server for a file. When the server receives a request for a file, it opens a TCP connection for the client and transfers the file. After the transfer is complete, the server closes the connection. For a second file, client requests again and the server reopens a new TCP connection.</p>
+<h2>Post Office Protocol (POP)</h2>
+<p>The Post Office Protocol version 3 (POP 3) is a simple mail retrieval protocol used by User Agents (client email software) to retrieve mails from mail server.</p>
+<p>When a client needs to retrieve mails from server, it opens a connection with the server on TCP port 110. User can then access his mails and download them to the local computer. POP3 works in two modes. The most common mode the delete mode, is to delete the emails from remote server after they are downloaded to local machines. The second mode, the keep mode, does not delete the email from mail server and gives the user an option to access mails later on mail server.</p>
+<h2>Hyper Text Transfer Protocol (HTTP)</h2>
+<p>The Hyper Text Transfer Protocol (HTTP) is the foundation of World Wide Web. Hypertext is well organized documentation system which uses hyperlinks to link the pages in the text documents. HTTP works on client server model. When a user wants to access any HTTP page on the internet, the client machine at user end initiates a TCP connection to server on port 80. When the server accepts the client request, the client is authorized to access web pages.</p>
+<p>To access the web pages, a client normally uses web browsers, who are responsible for initiating, maintaining, and closing TCP connections. HTTP is a stateless protocol, which means the Server maintains no information about earlier requests by clients.</p>
+<p>HTTP versions</p>
+<ul class="list">
+<li>
+<p>HTTP 1.0 uses non persistent HTTP. At most one object can be sent over a single TCP connection.</p>
+</li>
+<li>
+<p>HTTP 1.1 uses persistent HTTP. In this version, multiple objects can be sent over a single TCP connection.</p>
+</li>
+</ul>
+<p>&nbsp;</p>

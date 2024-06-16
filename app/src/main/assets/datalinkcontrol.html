@@ -1,0 +1,115 @@
+<h1 class="h1">Data Link Controls</h1>
+<p>Data Link Control is the service provided by the Data Link Layer to provide reliable data transfer over the physical medium. For example, In the half-duplex transmission mode, one device can only transmit the data at a time. If both the devices at the end of the links transmit the data simultaneously, they will collide and leads to the loss of the information. The Data link layer provides the coordination among the devices so that no collision occurs.</p>
+<p><strong>The Data link layer provides three functions:</strong></p>
+<ul class="points">
+<li>Line discipline</li>
+<li>Flow Control</li>
+<li>Error Control</li>
+</ul>
+<h2 class="h2">Line Discipline</h2>
+<ul class="points">
+<li>Line Discipline is a functionality of the Data link layer that provides the coordination among the link systems. It determines which device can send, and when it can send the data.</li>
+</ul>
+<p><strong>Line Discipline can be achieved in two ways:</strong></p>
+<ul class="points">
+<li>ENQ/ACK</li>
+<li>Poll/select</li>
+</ul>
+<p><strong>END/ACK</strong></p>
+<p>END/ACK stands for Enquiry/Acknowledgement is used when there is no wrong receiver available on the link and having a dedicated path between the two devices so that the device capable of receiving the transmission is the intended one.</p>
+<p>END/ACK coordinates which device will start the transmission and whether the recipient is ready or not.</p>
+<p><strong>Poll/Select</strong></p>
+<p>The Poll/Select method of line discipline works with those topologies where one device is designated as a primary station, and other devices are secondary stations.</p>
+<h2 class="h2">Flow Control</h2>
+<ul class="points">
+<li>It is a set of procedures that tells the sender how much data it can transmit before the data overwhelms the receiver.</li>
+<li>The receiving device has limited speed and limited memory to store the data. Therefore, the receiving device must be able to inform the sending device to stop the transmission temporarily before the limits are reached.</li>
+<li>It requires a buffer, a block of memory for storing the information until they are processed.</li>
+</ul>
+<p><strong>Two methods have been developed to control the flow of data:</strong></p>
+<ul class="points">
+<li>Stop-and-wait</li>
+<li>Sliding window</li>
+</ul>
+<p><strong>Stop-and-wait</strong></p>
+<ul class="points">
+<li>In the Stop-and-wait method, the sender waits for an acknowledgement after every frame it sends.</li>
+<li>When acknowledgement is received, then only next frame is sent. The process of alternately sending and waiting of a frame continues until the sender transmits the EOT (End of transmission) frame.</li>
+</ul>
+<p><strong>Advantage of Stop-and-wait</strong></p>
+<p>The Stop-and-wait method is simple as each frame is checked and acknowledged before the next frame is sent.</p>
+<p><strong>Disadvantage of Stop-and-wait</strong></p>
+<p>Stop-and-wait technique is inefficient to use as each frame must travel across all the way to the receiver, and an acknowledgement travels all the way before the next frame is sent. Each frame sent and received uses the entire time needed to traverse the link.</p>
+<p><strong>Sliding Window</strong></p>
+<ul class="points">
+<li>The Sliding Window is a method of flow control in which a sender can transmit the several frames before getting an acknowledgement.</li>
+<li>In Sliding Window Control, multiple frames can be sent one after the another due to which capacity of the communication channel can be utilized efficiently.</li>
+<li>A single ACK acknowledge multiple frames.</li>
+<li>Sliding Window refers to imaginary boxes at both the sender and receiver end.</li>
+<li>The window can hold the frames at either end, and it provides the upper limit on the number of frames that can be transmitted before the acknowledgement.</li>
+<li>Frames can be acknowledged even when the window is not completely filled.</li>
+<li>The window has a specific size in which they are numbered as modulo-n means that they are numbered from 0 to n-1. For example, if n = 8, the frames are numbered from 0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,0,1........</li>
+<li>The size of the window is represented as n-1. Therefore, maximum n-1 frames can be sent before acknowledgement.</li>
+<li>When the receiver sends the ACK, it includes the number of the next frame that it wants to receive. For example, to acknowledge the string of frames ending with frame number 4, the receiver will send the ACK containing the number 5. When the sender sees the ACK with the number 5, it got to know that the frames from 0 through 4 have been received.</li>
+</ul>
+<p><strong>Sender Window</strong></p>
+<ul class="points">
+<li>At the beginning of a transmission, the sender window contains n-1 frames, and when they are sent out, the left boundary moves inward shrinking the size of the window. For example, if the size of the window is w if three frames are sent out, then the number of frames left out in the sender window is w-3.</li>
+<li>Once the ACK has arrived, then the sender window expands to the number which will be equal to the number of frames acknowledged by ACK.</li>
+<li>For example, the size of the window is 7, and if frames 0 through 4 have been sent out and no acknowledgement has arrived, then the sender window contains only two frames, i.e., 5 and 6. Now, if ACK has arrived with a number 4 which means that 0 through 3 frames have arrived undamaged and the sender window is expanded to include the next four frames. Therefore, the sender window contains six frames (5,6,7,0,1,2).</li>
+</ul>
+<p><strong>Receiver Window</strong></p>
+<ul class="points">
+<li>At the beginning of transmission, the receiver window does not contain n frames, but it contains n-1 spaces for frames.</li>
+<li>When the new frame arrives, the size of the window shrinks.</li>
+<li>The receiver window does not represent the number of frames received, but it represents the number of frames that can be received before an ACK is sent. For example, the size of the window is w, if three frames are received then the number of spaces available in the window is (w-3).</li>
+<li>Once the acknowledgement is sent, the receiver window expands by the number equal to the number of frames acknowledged.</li>
+<li>Suppose the size of the window is 7 means that the receiver window contains seven spaces for seven frames. If the one frame is received, then the receiver window shrinks and moving the boundary from 0 to 1. In this way, window shrinks one by one, so window now contains the six spaces. If frames from 0 through 4 have sent, then the window contains two spaces before an acknowledgement is sent.</li>
+</ul>
+<h2 class="h2">Error Control</h2>
+<p>Error Control is a technique of error detection and retransmission.</p>
+<p><strong>Categories of Error Control:</strong></p>
+<p><strong>Stop-and-wait ARQ</strong></p>
+<p>Stop-and-wait ARQ is a technique used to retransmit the data in case of damaged or lost frames.</p>
+<p>This technique works on the principle that the sender will not transmit the next frame until it receives the acknowledgement of the last transmitted frame.</p>
+<p><strong>Four features are required for the retransmission:</strong></p>
+<ul class="points">
+<li>The sending device keeps a copy of the last transmitted frame until the acknowledgement is received. Keeping the copy allows the sender to retransmit the data if the frame is not received correctly.</li>
+<li>Both the data frames and the ACK frames are numbered alternately 0 and 1 so that they can be identified individually. Suppose data 1 frame acknowledges the data 0 frame means that the data 0 frame has been arrived correctly and expects to receive data 1 frame.</li>
+<li>If an error occurs in the last transmitted frame, then the receiver sends the NAK frame which is not numbered. On receiving the NAK frame, sender retransmits the data.</li>
+<li>It works with the timer. If the acknowledgement is not received within the allotted time, then the sender assumes that the frame is lost during the transmission, so it will retransmit the frame.</li>
+</ul>
+<p><strong>Two possibilities of the retransmission:</strong></p>
+<ul class="points">
+<li><strong>Damaged Frame:</strong>&nbsp;When the receiver receives a damaged frame, i.e., the frame contains an error, then it returns the NAK frame. For example, when the data 0 frame is sent, and then the receiver sends the ACK 1 frame means that the data 0 has arrived correctly, and transmits the data 1 frame. The sender transmits the next frame: data 1. It reaches undamaged, and the receiver returns ACK 0. The sender transmits the next frame: data 0. The receiver reports an error and returns the NAK frame. The sender retransmits the data 0 frame.</li>
+<li><strong>Lost Frame:</strong>&nbsp;Sender is equipped with the timer and starts when the frame is transmitted. Sometimes the frame has not arrived at the receiving end so that it can be acknowledged neither positively nor negatively. The sender waits for acknowledgement until the timer goes off. If the timer goes off, it retransmits the last transmitted frame.</li>
+</ul>
+<p><strong>Sliding Window ARQ</strong></p>
+<p>SlidingWindow ARQ is a technique used for continuous transmission error control.</p>
+<p><strong>Three Features used for retransmission:</strong></p>
+<ul class="points">
+<li>In this case, the sender keeps the copies of all the transmitted frames until they have been acknowledged. Suppose the frames from 0 through 4 have been transmitted, and the last acknowledgement was for frame 2, the sender has to keep the copies of frames 3 and 4 until they receive correctly.</li>
+<li>The receiver can send either NAK or ACK depending on the conditions. The NAK frame tells the sender that the data have been received damaged. Since the sliding window is a continuous transmission mechanism, both ACK and NAK must be numbered for the identification of a frame. The ACK frame consists of a number that represents the next frame which the receiver expects to receive. The NAK frame consists of a number that represents the damaged frame.</li>
+<li>The sliding window ARQ is equipped with the timer to handle the lost acknowledgements. Suppose then n-1 frames have been sent before receiving any acknowledgement. The sender waits for the acknowledgement, so it starts the timer and waits before sending any more. If the allotted time runs out, the sender retransmits one or all the frames depending upon the protocol used.</li>
+</ul>
+<p><strong>Two protocols used in sliding window ARQ:</strong></p>
+<ul class="points">
+<li><strong>Go-Back-n ARQ:</strong>&nbsp;In Go-Back-N ARQ protocol, if one frame is lost or damaged, then it retransmits all the frames after which it does not receive the positive ACK.</li>
+</ul>
+<p>Three possibilities can occur for retransmission:</p>
+<ul class="points">
+<li><strong>Damaged Frame:</strong>&nbsp;When the frame is damaged, then the receiver sends a NAK frame.</li>
+</ul>
+<ul class="points">
+<li><strong>Lost Data Frame:</strong>&nbsp;In Sliding window protocols, data frames are sent sequentially. If any of the frames is lost, then the next frame arrive at the receiver is out of sequence. The receiver checks the sequence number of each of the frame, discovers the frame that has been skipped, and returns the NAK for the missing frame. The sending device retransmits the frame indicated by NAK as well as the frames transmitted after the lost frame.</li>
+<li><strong>Lost Acknowledgement:</strong>&nbsp;The sender can send as many frames as the windows allow before waiting for any acknowledgement. Once the limit of the window is reached, the sender has no more frames to send; it must wait for the acknowledgement. If the acknowledgement is lost, then the sender could wait forever. To avoid such situation, the sender is equipped with the timer that starts counting whenever the window capacity is reached. If the acknowledgement has not been received within the time limit, then the sender retransmits the frame since the last ACK.</li>
+</ul>
+<p><strong>Selective-Reject ARQ</strong></p>
+<ul class="points">
+<li>Selective-Reject ARQ technique is more efficient than Go-Back-n ARQ.</li>
+<li>In this technique, only those frames are retransmitted for which negative acknowledgement (NAK) has been received.</li>
+<li>The receiver storage buffer keeps all the damaged frames on hold until the frame in error is correctly received.</li>
+<li>The receiver must have an appropriate logic for reinserting the frames in a correct order.</li>
+<li>The sender must consist of a searching mechanism that selects only the requested frame for retransmission.</li>
+</ul>
+<p>&nbsp;</p>

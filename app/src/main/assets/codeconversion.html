@@ -1,0 +1,195 @@
+<h1>Code Conversion</h1>
+<p>There are many methods or techniques which can be used to convert code from one format to another. We'll demonstrate here the following</p>
+<ul class="list">
+<li>Binary to BCD Conversion</li>
+<li>BCD to Binary Conversion</li>
+<li>BCD to Excess-3</li>
+<li>Excess-3 to BCD</li>
+</ul>
+<h2>Binary to BCD Conversion</h2>
+<p>Steps</p>
+<ul class="list">
+<li>
+<p><strong>Step 1</strong>&nbsp;-- Convert the binary number to decimal.</p>
+</li>
+<li>
+<p><strong>Step 2</strong>&nbsp;-- Convert decimal number to BCD.</p>
+</li>
+</ul>
+<p>Example &minus; convert (11101)<sub>2</sub>&nbsp;to BCD.</p>
+<h3>Step 1 &minus; Convert to Decimal</h3>
+<p>Binary Number &minus; 11101<sub>2</sub></p>
+<p>Calculating Decimal Equivalent &minus;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Step</th>
+<th>Binary Number</th>
+<th>Decimal Number</th>
+</tr>
+<tr>
+<td>Step 1</td>
+<td>11101<sub>2</sub></td>
+<td>((1 &times; 2<sup>4</sup>) + (1 &times; 2<sup>3</sup>) + (1 &times; 2<sup>2</sup>) + (0 &times; 2<sup>1</sup>) + (1 &times; 2<sup>0</sup>))<sub>10</sub></td>
+</tr>
+<tr>
+<td>Step 2</td>
+<td>11101<sub>2</sub></td>
+<td>(16 + 8 + 4 + 0 + 1)<sub>10</sub></td>
+</tr>
+<tr>
+<td>Step 3</td>
+<td>11101<sub>2</sub></td>
+<td>29<sub>10</sub></td>
+</tr>
+</tbody>
+</table>
+<p>Binary Number &minus; 11101<sub>2</sub>&nbsp;= Decimal Number &minus; 29<sub>10</sub></p>
+<h3>Step 2 &minus; Convert to BCD</h3>
+<p>Decimal Number &minus; 29<sub>10</sub></p>
+<p>Calculating BCD Equivalent. Convert each digit into groups of four binary digits equivalent.</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Step</th>
+<th>Decimal Number</th>
+<th>Conversion</th>
+</tr>
+<tr>
+<td>Step 1</td>
+<td>29<sub>10</sub></td>
+<td>0010<sub>2</sub>&nbsp;1001<sub>2</sub></td>
+</tr>
+<tr>
+<td>Step 2</td>
+<td>29<sub>10</sub></td>
+<td>00101001<sub>BCD</sub></td>
+</tr>
+</tbody>
+</table>
+<p>Result</p>
+<pre class="result notranslate">(11101)<sub>2</sub> =  (00101001)<sub>BCD</sub>
+</pre>
+<h2>BCD to Binary Conversion</h2>
+<p>Steps</p>
+<ul class="list">
+<li>
+<p><strong>Step 1</strong>&nbsp;-- Convert the BCD number to decimal.</p>
+</li>
+<li>
+<p><strong>Step 2</strong>&nbsp;-- Convert decimal to binary.</p>
+</li>
+</ul>
+<p>Example &minus; convert (00101001)<sub>BCD</sub>&nbsp;to Binary.</p>
+<h3>Step 1 - Convert to BCD</h3>
+<p>BCD Number &minus; (00101001)<sub>BCD</sub></p>
+<p>Calculating Decimal Equivalent. Convert each four digit into a group and get decimal equivalent for each group.</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Step</th>
+<th>BCD Number</th>
+<th>Conversion</th>
+</tr>
+<tr>
+<td>Step 1</td>
+<td>(00101001)<sub>BCD</sub></td>
+<td>0010<sub>2</sub>&nbsp;1001<sub>2</sub></td>
+</tr>
+<tr>
+<td>Step 2</td>
+<td>(00101001)<sub>BCD</sub></td>
+<td>2<sub>10</sub>&nbsp;9<sub>10</sub></td>
+</tr>
+<tr>
+<td>Step 3</td>
+<td>(00101001)<sub>BCD</sub></td>
+<td>29<sub>10</sub></td>
+</tr>
+</tbody>
+</table>
+<p>BCD Number &minus; (00101001)<sub>BCD</sub>&nbsp;= Decimal Number &minus; 29<sub>10</sub></p>
+<h3>Step 2 - Convert to Binary</h3>
+<p>Used long division method for decimal to binary conversion.</p>
+<p>Decimal Number &minus; 29<sub>10</sub></p>
+<p>Calculating Binary Equivalent &minus;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Step</th>
+<th>Operation</th>
+<th>Result</th>
+<th>Remainder</th>
+</tr>
+<tr>
+<td>Step 1</td>
+<td>29 / 2</td>
+<td>14</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Step 2</td>
+<td>14 / 2</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Step 3</td>
+<td>7 / 2</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Step 4</td>
+<td>3 / 2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Step 5</td>
+<td>1 / 2</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>As mentioned in Steps 2 and 4, the remainders have to be arranged in the reverse order so that the first remainder becomes the least significant digit (LSD) and the last remainder becomes the most significant digit (MSD).</p>
+<p>Decimal Number &minus; 29<sub>10</sub>&nbsp;= Binary Number &minus; 11101<sub>2</sub></p>
+<p>Result</p>
+<pre class="result notranslate">(00101001)<sub>BCD</sub> = (11101)<sub>2</sub>
+</pre>
+<h2>BCD to Excess-3</h2>
+<p>Steps</p>
+<ul class="list">
+<li>
+<p><strong>Step 1</strong>&nbsp;-- Convert BCD to decimal.</p>
+</li>
+<li>
+<p><strong>Step 2</strong>&nbsp;-- Add (3)<sub>10</sub>&nbsp;to this decimal number.</p>
+</li>
+<li>
+<p><strong>Step 3</strong>&nbsp;-- Convert into binary to get excess-3 code.</p>
+</li>
+</ul>
+<p>Example &minus; convert (0110)<sub>BCD</sub>&nbsp;to Excess-3.</p>
+<h3>Step 1 &minus; Convert to decimal</h3>
+<p>(0110)<sub>BCD</sub>&nbsp;= 6<sub>10</sub></p>
+<h3>Step 2 &minus; Add 3 to decimal</h3>
+<p>(6)<sub>10</sub>&nbsp;+ (3)<sub>10</sub>&nbsp;= (9)<sub>10</sub></p>
+<h3>Step 3 &minus; Convert to Excess-3</h3>
+<p>(9)<sub>10</sub>&nbsp;= (1001)<sub>2</sub></p>
+<p>Result</p>
+<pre class="result notranslate">(0110)<sub>BCD</sub> = (1001)<sub>XS-3</sub>
+</pre>
+<h2>Excess-3 to BCD Conversion</h2>
+<p>Steps</p>
+<ul class="list">
+<li>
+<p><strong>Step 1</strong>&nbsp;-- Subtract (0011)<sub>2</sub>&nbsp;from each 4 bit of excess-3 digit to obtain the corresponding BCD code.</p>
+</li>
+</ul>
+<p>Example &minus; convert (10011010)<sub>XS-3</sub>&nbsp;to BCD.</p>
+<pre class="result notranslate">Given XS-3 number  = 1 0 0 1 1 0 1 0 
+Subtract (0011)<sub>2</sub>   = 1 0 0 1 0 1 1 1
+                    --------------------
+               BCD = 0 1 1 0   0 1 1 1</pre>

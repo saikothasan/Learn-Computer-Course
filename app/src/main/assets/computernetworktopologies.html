@@ -1,0 +1,41 @@
+<h1>Network Topology</h1>
+<p>Network topology refers to the manner in which the links and nodes of a network are arranged to relate to each other. Topologies are categorized as either physical network topology, which is the physical signal transmission medium, or logical network topology, which refers to the manner in which data travels through the network between devices, independent of physical connection of the devices. Logical network topology examples include twisted pair Ethernet, which is categorized as a logical bus topology, and token ring, which is categorized as a logical ring topology.</p>
+<p>Physical network topology examples include star, mesh, tree, ring, point-to-point, circular, hybrid, and bus topology networks, each consisting of different configurations of nodes and links. The ideal network topology depends on each business&rsquo;s size, scale, goals, and budget. A network topology diagram helps visualize the communicating devices, which are modeled as nodes, and the connections between the devices, which are modeled as links between the nodes.</p>
+<h2>Importance of Network Topology:</h2>
+<p>The layout of a network has a direct impact on network functionality. Selecting the right topology can improve performance and data efficiency, optimize allocation of resources, and reduce operational costs. Software-created network topology diagrams are important references for diagnosing network connectivity problems, investigating network slowdowns, and generally troubleshooting issues. One of the primary uses of network topology is to define the configuration of various telecommunication&nbsp;networks,including computer networks,command and control radio networks, and industrial fieldbusses.</p>
+<h2>Types of Topology</h2>
+<p>There are five types of topology in computer networks:</p>
+<p>1. Mesh Topology<br />2. Star Topology<br />3. Bus Topology<br />4. Ring Topology<br />5. Hybrid Topology</p>
+<h2>1) Mesh Topology</h2>
+<p>In mesh topology each device is connected to every other device on the network through a dedicated point-to-point link. When we say dedicated it means that the link only carries data for the two connected devices only. Lets say we have n devices in the network then each device must be connected with (n-1) devices of the network. Number of links in a mesh topology of n devices would be n(n-1)/2.</p>
+<h3>Advantages of Mesh topology</h3>
+<p>1. No data traffic issues as there is a dedicated link between two devices which means the link is only available for those two devices.<br />2. Mesh topology is reliable and robust as failure of one link doesn&rsquo;t affect other links and the communication between other devices on the network.<br />3. Mesh topology is secure because there is a point to point link thus unauthorized access is not possible.<br />4. Fault detection is easy.</p>
+<h3>Disadvantages of Mesh topology</h3>
+<p>1. Amount of wires required to connected each system is tedious and headache.<br />2. Since each device needs to be connected with other devices, number of I/O ports required must be huge.<br />3. Scalability issues because a device cannot be connected with large number of devices with a dedicated point to point link.</p>
+<h2>2) Star Topology</h2>
+<p>In star topology each device in the network is connected to a central device called hub. Unlike Mesh topology, star topology doesn&rsquo;t allow direct communication between devices, a device must have to communicate through hub. If one device wants to send data to other device, it has to first send the data to hub and then the hub transmit that data to the designated device.</p>
+<h3>Advantages of Star topology</h3>
+<p>1. Less expensive because each device only need one I/O port and needs to be connected with hub with one link.<br />2. Easier to install<br />3. Less amount of cables required because each device needs to be connected with the hub only.<br />4. Robust, if one link fails, other links will work just fine.<br />5. Easy fault detection because the link can be easily identified.</p>
+<h3>Disadvantages of Star topology</h3>
+<p>1. If hub goes down everything goes down, none of the devices can work without hub.<br />2. Hub requires more resources and regular maintenance because it is the central system of star topology.</p>
+<h2>3) Bus Topology</h2>
+<p>In bus topology there is a main cable and all the devices are connected to this main cable through drop lines. There is a device called tap that connects the drop line to the main cable. Since all the data is transmitted over the main cable, there is a limit of drop lines and the distance a main cable can have.</p>
+<h3>Advantages of bus topology</h3>
+<p>1. Easy installation, each cable needs to be connected with backbone cable.<br />2. Less cables required than Mesh and star topology</p>
+<h3>Disadvantages of bus topology</h3>
+<p>1. Difficultly in fault detection.<br />2. Not scalable as there is a limit of how many nodes you can connect with backbone cable.</p>
+<h2>4) Ring Topology</h2>
+<p>In ring topology each device is connected with the two devices on either side of it. There are two dedicated point to point links a device has with the devices on the either side of it. This structure forms a ring thus it is known as ring topology. If a device wants to send data to another device then it sends the data in one direction, each device in ring topology has a repeater, if the received data is intended for other device then repeater forwards this data until the intended device receives it.</p>
+<h3>Advantages of Ring Topology</h3>
+<p>1. Easy to install.<br />2. Managing is easier as to add or remove a device from the topology only two links are required to be changed.</p>
+<h3>Disadvantages of Ring Topology</h3>
+<p>1. A link failure can fail the entire network as the signal will not travel forward due to failure.<br />2. Data traffic issues, since all the data is circulating in a ring.</p>
+<h2>5) Hybrid topology</h2>
+<p>A combination of two or more topology is known as hybrid topology. For example a combination of star and mesh topology is known as hybrid topology.</p>
+<h3>Advantages of Hybrid topology</h3>
+<p>1. We can choose the topology based on the requirement for example, scalability is our concern then we can use star topology instead of bus technology.<br />2. Scalable as we can further connect other computer networks with the existing networks with different topologies.</p>
+<h3>Disadvantages of Hybrid topology</h3>
+<p>1. Fault detection is difficult.<br />2. Installation is difficult.<br />3. Design is complex so maintenance is high thus expensive.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

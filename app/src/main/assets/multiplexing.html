@@ -1,0 +1,109 @@
+<h1 class="h1">What is Multiplexing?</h1>
+<p>Multiplexing is a technique used to combine and send the multiple data streams over a single medium. The process of combining the data streams is known as multiplexing and hardware used for multiplexing is known as a multiplexer.</p>
+<p>Multiplexing is achieved by using a device called Multiplexer (<strong>MUX</strong>) that combines n input lines to generate a single output line. Multiplexing follows many-to-one, i.e., n input lines and one output line.</p>
+<p>Demultiplexing is achieved by using a device called Demultiplexer (<strong>DEMUX</strong>) available at the receiving end. DEMUX separates a signal into its component signals (one input and n outputs). Therefore, we can say that demultiplexing follows the one-to-many approach.</p>
+<h2 class="h2">Why Multiplexing?</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>The transmission medium is used to send the signal from sender to receiver. The medium can only have one signal at a time.</li>
+<li>If there are multiple signals to share one medium, then the medium must be divided in such a way that each signal is given some portion of the available bandwidth. For example: If there are 10 signals and bandwidth of medium is100 units, then the 10 unit is shared by each signal.</li>
+<li>When multiple signals share the common medium, there is a possibility of collision. Multiplexing concept is used to avoid such collision.</li>
+<li>Transmission services are very expensive.</li>
+</ul>
+<h2 class="h2">History of Multiplexing</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>Multiplexing technique is widely used in telecommunications in which several telephone calls are carried through a single wire.</li>
+<li>Multiplexing originated in telegraphy in the early 1870s and is now widely used in communication.</li>
+<li>George Owen Squier developed the&nbsp;<strong>telephone carrier multiplexing</strong>&nbsp;in 1910.</li>
+</ul>
+<h2 class="h2">Advantages of Multiplexing:</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>More than one signal can be sent over a single medium.</li>
+<li>The bandwidth of a medium can be utilized effectively.</li>
+</ul>
+<h2 class="h2">Multiplexing Techniques</h2>
+<p>Multiplexing techniques can be classified as:</p>
+<h2 class="h2">Frequency-division Multiplexing (FDM)</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>It is an analog technique.</li>
+<li><strong>Frequency Division Multiplexing</strong>&nbsp;is a technique in which the available bandwidth of a single transmission medium is subdivided into several channels.</li>
+</ul>
+<ul class="points" style="list-style-type: circle;">
+<li>In the above diagram, a single transmission medium is subdivided into several frequency channels, and each frequency channel is given to different devices. Device 1 has a frequency channel of range from 1 to 5.</li>
+<li>The input signals are translated into frequency bands by using modulation techniques, and they are combined by a multiplexer to form a composite signal.</li>
+<li>The main aim of the FDM is to subdivide the available bandwidth into different frequency channels and allocate them to different devices.</li>
+<li>Using the modulation technique, the input signals are transmitted into frequency bands and then combined to form a composite signal.</li>
+<li>The carriers which are used for modulating the signals are known as&nbsp;<strong>sub-carriers</strong>. They are represented as f1,f2..fn.</li>
+<li><strong>FDM</strong>&nbsp;is mainly used in radio broadcasts and TV networks.</li>
+</ul>
+<p><strong>Advantages Of FDM:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>FDM is used for analog signals.</li>
+<li>FDM process is very simple and easy modulation.</li>
+<li>A Large number of signals can be sent through an FDM simultaneously.</li>
+<li>It does not require any synchronization between sender and receiver.</li>
+</ul>
+<p><strong>Disadvantages Of FDM:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>FDM technique is used only when low-speed channels are required.</li>
+<li>It suffers the problem of crosstalk.</li>
+<li>A Large number of modulators are required.</li>
+<li>It requires a high bandwidth channel.</li>
+</ul>
+<p><strong>Applications Of FDM:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>FDM is commonly used in TV networks.</li>
+<li>It is used in FM and AM broadcasting. Each FM radio station has different frequencies, and they are multiplexed to form a composite signal. The multiplexed signal is transmitted in the air.</li>
+</ul>
+<h2 class="h2">Wavelength Division Multiplexing (WDM)</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>Wavelength Division Multiplexing is same as FDM except that the optical signals are transmitted through the fibre optic cable.</li>
+<li>WDM is used on fibre optics to increase the capacity of a single fibre.</li>
+<li>It is used to utilize the high data rate capability of fibre optic cable.</li>
+<li>It is an analog multiplexing technique.</li>
+<li>Optical signals from different source are combined to form a wider band of light with the help of multiplexer.</li>
+<li>At the receiving end, demultiplexer separates the signals to transmit them to their respective destinations.</li>
+<li>Multiplexing and Demultiplexing can be achieved by using a prism.</li>
+<li>Prism can perform a role of multiplexer by combining the various optical signals to form a composite signal, and the composite signal is transmitted through a fibre optical cable.</li>
+<li>Prism also performs a reverse operation, i.e., demultiplexing the signal.</li>
+</ul>
+<h2 class="h2">Time Division Multiplexing</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>It is a digital technique.</li>
+<li>In Frequency Division Multiplexing Technique, all signals operate at the same time with different frequency, but in case of Time Division Multiplexing technique, all signals operate at the same frequency with different time.</li>
+<li>In&nbsp;<strong>Time Division Multiplexing technique</strong>, the total time available in the channel is distributed among different users. Therefore, each user is allocated with different time interval known as a Time slot at which data is to be transmitted by the sender.</li>
+<li>A user takes control of the channel for a fixed amount of time.</li>
+<li>In Time Division Multiplexing technique, data is not transmitted simultaneously rather the data is transmitted one-by-one.</li>
+<li>In TDM, the signal is transmitted in the form of frames. Frames contain a cycle of time slots in which each frame contains one or more slots dedicated to each user.</li>
+<li>It can be used to multiplex both digital and analog signals but mainly used to multiplex digital signals.</li>
+</ul>
+<p><strong>There are two types of TDM:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>Synchronous TDM</li>
+<li>Asynchronous TDM</li>
+</ul>
+<h2 class="h3">Synchronous TDM</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>A Synchronous TDM is a technique in which time slot is preassigned to every device.</li>
+<li>In Synchronous TDM, each device is given some time slot irrespective of the fact that the device contains the data or not.</li>
+<li>If the device does not have any data, then the slot will remain empty.</li>
+<li>In Synchronous TDM, signals are sent in the form of frames. Time slots are organized in the form of frames. If a device does not have data for a particular time slot, then the empty slot will be transmitted.</li>
+<li>The most popular Synchronous TDM are T-1 multiplexing, ISDN multiplexing, and SONET multiplexing.</li>
+<li>If there are n devices, then there are n slots.</li>
+</ul>
+<p><strong>Disadvantages Of Synchronous TDM:</strong></p>
+<ul class="points" style="list-style-type: circle;">
+<li>The capacity of the channel is not fully utilized as the empty slots are also transmitted which is having no data. In the above figure, the first frame is completely filled, but in the last two frames, some slots are empty. Therefore, we can say that the capacity of the channel is not utilized efficiently.</li>
+<li>The speed of the transmission medium should be greater than the total speed of the input lines. An alternative approach to the Synchronous TDM is Asynchronous Time Division Multiplexing.</li>
+</ul>
+<h2 class="h3">Asynchronous TDM</h2>
+<ul class="points" style="list-style-type: circle;">
+<li>An asynchronous TDM is also known as Statistical TDM.</li>
+<li>An asynchronous TDM is a technique in which time slots are not fixed as in the case of Synchronous TDM. Time slots are allocated to only those devices which have the data to send. Therefore, we can say that Asynchronous Time Division multiplexor transmits only the data from active workstations.</li>
+<li>An asynchronous TDM technique dynamically allocates the time slots to the devices.</li>
+<li>In Asynchronous TDM, total speed of the input lines can be greater than the capacity of the channel.</li>
+<li>Asynchronous Time Division multiplexor accepts the incoming data streams and creates a frame that contains only data with no empty slots.</li>
+<li>In Asynchronous TDM, each slot contains an address part that identifies the source of the data.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
